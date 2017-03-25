@@ -5,14 +5,8 @@
 
 //Function to calculate a^b
 
-int power(int a, int b)
-{
-	if(b == 0)
-	return 1;
-	
-	else 
-	return a* power(a, b-1); 
-}
+
+int power(int , int );
 
 //Function to find the decimal equivalent of a binary number
 
@@ -23,6 +17,12 @@ int bin_to_dec(int a[], int n)
 	
 	int i, dec= 0;
 	
+	if (n<1)
+	{
+		printf("Error: invalid array size passed to function bin_to_dec()\n"); //the function will throw an error if the binary number is invalid.
+		exit(0);
+	}
+
 	for(i= n- 1; i>= 0; i--)
 	{
 		if(a[i]< 0 || a[i]> 1)
@@ -36,3 +36,50 @@ int bin_to_dec(int a[], int n)
 	
 	return dec; 
 }
+
+int power(int a, int b)
+{
+	if(b == 0)
+	return 1;
+	
+	else 
+	return a* power(a, b-1); 
+}
+
+// gives 1's complement of a binary number
+int * ones_complement(int a[],int array[],int n)
+{
+	int i;
+
+	if (n<1)
+	{
+		printf("Error: invalid array size passed to function ones_complement()\n"); //the function will throw an error if the binary number is invalid.
+		exit(0);
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		a[i]=array[i];
+	}
+	
+	for (i = 0; i < n; i++)
+	{
+		if (array[i]==1)
+		{
+			a[i]=0;
+		}
+		else if (array[i]==0)
+		{
+			a[i]=1;
+		}
+		else
+		{
+			printf("Error: invalid binary number passed to function ones_complement()\n"); //the function will throw an error if the binary number is invalid.
+			exit(0);
+		}
+	}
+
+	return (a); 
+
+}
+
