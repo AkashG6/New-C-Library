@@ -57,8 +57,8 @@ int main()
 	for(i= 0; i< n; i++)
 	printf("%d ",a[i]);*/
 	
-	
-	int n, n1;
+	///////////////////////////////////////////Octal to bin and bin to octal
+	/*int n, n1;
 	
 	printf("Enter the size of the source array: ");
 	scanf("%d",&n1);
@@ -72,12 +72,25 @@ int main()
 	for(i= 0; i< n1; i++)
 	scanf("%d", &arr[i]);
 	
-	a[n]= *	bin_to_octa(a, n, arr, n1);
+	a[n]= *	octa_to_bin(a, n, arr, n1);
 	
-	printf("Octa: ");
+	printf("Bin: ");
 	
 	for(i= 0; i< n; i++)
-	printf("%d ", a[i]);
+	printf("%d ", a[i]);*/
+	
+	/////////////////////////////////////////////Octa to dec
+	int n, i;
+	printf("Enter the size of the array: ");
+	scanf("%d",&n);
+	
+	int a[n];
+	for(i= 0; i< n; i++)
+	scanf("%d",&a[i]);
+	
+	int dec= octa_to_dec(a, n);
+	
+	printf("Decimal: %d",dec);
 	
 	return 0;
 }
