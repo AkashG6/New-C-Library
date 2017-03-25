@@ -41,6 +41,17 @@ void insert_last(struct vector* start, float data)
 	 node->next=NULL;
 }
 
+void insert_first(struct vector* start, float data)
+{
+     struct vector *node = create_vector();
+     
+     node->next=start->next;
+	 start->next=node;
+	 node->idata=data;
+	 node->cdata=data;
+	 node->fdata=data;
+}
+
 void display_int(struct vector* start)
 {
 	struct vector *temp;
