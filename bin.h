@@ -83,3 +83,69 @@ int * ones_complement(int a[],int array[],int n)
 
 }
 
+
+// decimal to binary conversion
+int * dec_to_bin(int array[],int nb,int n)
+{
+	if (n<0)
+	{
+		printf("Error: cannot pass negative number to function dec_to_bin()\n");
+		exit(0);
+	}
+
+	int i,j;
+	for (i = nb-1; i >=0 ; i--)
+	{
+		array[i]=n%2;
+		n=n/2;
+	}
+	if (n>=1)
+	{
+		printf("Error: insufficient size of destination array\n");
+		exit(0);
+	}
+
+	for (i = 0; i < nb; i++)
+	{
+		printf("%d",array[i] );
+	}
+	printf("\n");
+
+	return array;
+}
+
+//Two's Complement of a binary number
+
+int * twos_complement(int a[], int arr[], int n)
+{
+	if (n<1)
+	{
+		printf("Error: invalid array size passed to function twos_complement()\n"); //the function will throw an error if the binary number is invalid.
+		exit(0);
+	}	
+	
+	//2's complement of arr
+	int flag= 0, j;
+	for(j= n- 1; j>= 0; j--)
+	{
+		if(arr[j] > 1 || arr[j]< 0)
+		{
+			printf("Error: invalid binary number passed to function twos_complement())\n"); //the function will throw an error if the binary number is invalid.
+			exit(0);
+		}    
+		
+		if(flag == 0)
+		{
+			if(arr[j] == 1)
+			flag= 1;
+			
+			a[j]= arr[j];
+		}
+				
+		else
+		a[j]= (arr[j]+1)%2;		
+	}
+	
+	return (a);
+}
+
