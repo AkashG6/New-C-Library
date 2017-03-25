@@ -255,3 +255,61 @@ float array_search_float(float a[], int n, float find) {
    }
     return -1;
 }
+
+//Sum of integer array elements
+
+int array_sum_int(int a[], int n)
+  {
+    int i,sum = 0;
+    
+    for(i=0;i<n;i++)
+    {
+      sum += a[i];
+    }
+    
+    return sum;
+  }
+  
+//Sum of float array elements
+
+float array_sum_float(float a[], int n)
+  {
+    int i;
+    float sum = 0;
+    
+    for(i=0;i<n;i++)
+    {
+      sum += a[i];
+    }
+    
+    return sum;
+  }
+
+//Sum of integer array elements
+
+float array_avg_int(int a[], int n)
+  {
+    int i,sum = 0;
+    
+    for(i=0;i<n;i++)
+    {
+      sum += a[i];
+    }
+    
+    return sum/n;
+  }
+  
+//Sum of float array elements
+
+float array_avg_float(float a[], int n)
+  {
+    int i;
+    float sum = 0;
+    
+    for(i=0;i<n;i++)
+    {
+      sum += a[i];
+    }
+    
+    return sum/n;
+  }
