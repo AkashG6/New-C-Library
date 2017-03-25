@@ -83,3 +83,38 @@ int * ones_complement(int a[],int array[],int n)
 
 }
 
+//Two's Complement of a binary number
+
+int * twos_complement(int a[], int arr[], int n)
+{
+	if (n<1)
+	{
+		printf("Error: invalid array size passed to function twos_complement()\n"); //the function will throw an error if the binary number is invalid.
+		exit(0);
+	}	
+	
+	//2's complement of arr
+	int flag= 0, j;
+	for(j= n- 1; j>= 0; j--)
+	{
+		if(arr[j] > 1 || arr[j]< 0)
+		{
+			printf("Error: invalid binary number passed to function twos_complement())\n"); //the function will throw an error if the binary number is invalid.
+			exit(0);
+		}    
+		
+		if(flag == 0)
+		{
+			if(arr[j] == 1)
+			flag= 1;
+			
+			a[j]= arr[j];
+		}
+				
+		else
+		a[j]= (arr[j]+1)%2;		
+	}
+	
+	return (a);
+}
+
