@@ -8,6 +8,7 @@ int main()
 	insert_last(ilist, 'a');
 	insert_last(ilist, 'b');
 	insert_last(ilist, 'c');
+	insert_first(ilist, 'z');
 	
 	printf("\nilist:");
 	display_int(ilist);
