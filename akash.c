@@ -141,6 +141,33 @@ int main()
 
 										// hexa to decimal
 
+	int i,n1;
+	printf("Enter size of source array\n");
+	scanf("%d",&n1);
+
+
+	int dec;
+	char array[n1];
+
+	printf("enter a hexadecimal no.\n");
+	for (i = 0; i < n1; i++)
+	{
+		scanf(" %c",&array[i]);
+	}
+
+	dec = hexa_to_dec(array,n1);
+
+	printf("\n in main\n");
+	printf("decimal is %d\n",dec );
+	printf("The no. was\n");
+	for (i = 0; i < n1; i++)
+	{
+		printf(" %c",array[i]);
+	}
+	printf("\n");
+
+
+
 } // END OF MAIN
 
 

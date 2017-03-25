@@ -238,7 +238,7 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 
 	if (n!=4*n1)
 	{
-		printf("Error: invalid destination array size passed to function bin_to_hexa() must be a integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
+		printf("Error: invalid destination array size passed to function hexa_to_bin(), must be a integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);
 	}
 	j=n-1;
@@ -318,11 +318,21 @@ char * dec_to_hexa(char a[], int n,int no)
 									// hexa to decimal
 
 
+int hexa_to_dec(char array[],int n1)
+{
+	int i,dec,temp[n1*4];
+
+	temp[n1*4] = *hexa_to_bin(temp,n1*4,array,n1);
+	dec = bin_to_dec(temp,n1*4);
+	return (dec);
+}
 
 
 
-
-
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
 
 
