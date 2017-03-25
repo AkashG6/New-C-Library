@@ -301,7 +301,7 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 }
 
 
-                                     //dec to hexa
+//dec to hexa
 char * dec_to_hexa(char a[], int n,int no)
 {
 	int temp[4*n],i;
@@ -318,11 +318,7 @@ char * dec_to_hexa(char a[], int n,int no)
 	return (a);
 }
 
-
-
-									// hexa to decimal
-
-
+// hexa to decimal
 int hexa_to_dec(char array[],int n1)
 {
 	int i,dec,temp[n1*4];
@@ -683,4 +679,41 @@ int octa_to_dec(int a[], int n)
 	}
 	
 	return dec; 
+}
+
+int * dec_to_octa(int a[], int n, int dec)
+{	
+	if (dec<0)
+	{
+		printf("Error: cannot pass negative number to function dec_to_octa().\n");
+		exit(0);
+	}
+
+	if(n< 1)
+	{
+		printf("Error: invalid array size passed to function dec_to_octa()\n"); //the function will throw an error if the array size is invalid.
+		exit(0);
+	}
+	
+	int j;
+	
+	for(j= 0; j< n; j++)
+	a[j]= 0;
+	
+	j= n- 1;
+	
+	while(dec> 0)
+	{
+		if(j == -1)
+		{
+			printf("Error: insufficient destination array size passed to function dec_to_octa()\n");
+			exit(0);
+		}
+		
+		a[j]= dec%8;
+		dec= dec/8;
+		j--;
+	}
+	
+	return a;
 }
