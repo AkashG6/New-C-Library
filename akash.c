@@ -34,19 +34,19 @@ int main()
 
 															// dec to bin
 
-	int n,i,size;
-	printf("Enter a number\n");
-	scanf("%d",&n);
-	printf("Enter number of bits\n");
-	scanf("%d",&size);
-	int array[size];
-	array[size] = *dec_to_bin(array,size,n);
-	for (i = 0; i < size; i++)
-	{
-		printf("%d ",array[i] );
-	}
-	printf("\n");
-	printf("%d\n",n );
+	// int n,i,size;
+	// printf("Enter a number\n");
+	// scanf("%d",&n);
+	// printf("Enter number of bits\n");
+	// scanf("%d",&size);
+	// int array[size];
+	// array[size] = *dec_to_bin(array,size,n);
+	// for (i = 0; i < size; i++)
+	// {
+	// 	printf("%d ",array[i] );
+	// }
+	// printf("\n");
+	// printf("%d\n",n );
 
 
 															// 
