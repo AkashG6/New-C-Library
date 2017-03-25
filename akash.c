@@ -83,36 +83,60 @@ int main()
 	// printf("\n");
 
 
+									// hexadecimal to binary
+
+	// int i,n,n1;
+	// printf("Enter size of source array\n");
+	// scanf("%d",&n1);
+	// printf("Enter size of destination array\n");
+	// scanf("%d",&n);
+
+	// int a[n];
+	// char array[n1];
+
+	// printf("enter a hexadecimal no.\n");
+	// for (i = 0; i < n1; i++)
+	// {
+	// 	scanf(" %c",&array[i]);
+	// }
+
+	// a[n] = *hexa_to_bin(a,n,array,n1);
+
+	// for (i = 0; i < n; i++)
+	// {
+	// 	printf("%d",a[i]);
+	// }
+
+	// printf("\n in main\n");
+	// printf("The no. was\n");
+	// for (i = 0; i < n1; i++)
+	// {
+	// 	printf(" %c",array[i]);
+	// }
+	// printf("\n");
 
 
-	int i,n,n1;
-	printf("Enter size of source array\n");
-	scanf("%d",&n1);
+
+										// decimal to hexadecimal
+
+	int i,n,no;
+	printf("Enter decimal number\n");
+	scanf("%d",&no);
 	printf("Enter size of destination array\n");
 	scanf("%d",&n);
 
-	int a[n];
-	char array[n1];
+	char a[n];
 
-	printf("enter a hexadecimal no.\n");
-	for (i = 0; i < n1; i++)
-	{
-		scanf(" %c",&array[i]);
-	}
-
-	a[n] = *hexa_to_bin(a,n,array,n1);
+	a[n] = *dec_to_hexa(a,n,no);
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%d",a[i]);
+		printf("%c",a[i]);
 	}
+	printf("\n");
+	
+	printf("The no. was %d\n",no);
 
-	printf("\n in main\n");
-	printf("The no. was\n");
-	for (i = 0; i < n1; i++)
-	{
-		printf(" %c",array[i]);
-	}
 	printf("\n");
 
 } // END OF MAIN
