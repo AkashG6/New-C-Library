@@ -7,7 +7,7 @@ int main(void)
   scanf("%d%d",&m,&n );
   printf("\nEnter the row and column mat2:" );
   scanf("%d%d",&p,&q );
-  int a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q];
+  int a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q],tr[q][m];
   for (i=0;i<m;i++)
    {
     for (j=0;j<n;j++)
@@ -28,6 +28,9 @@ int main(void)
   prt_mat(p,q,b);
   add_mat(m,n,p,q,mul,a,b);
   prt_mat(m,q,mul);
+
+  transpose_mat(m,q,tr,mul);
+  prt_mat(q,m,tr);
 
   return 0;
 }
