@@ -88,7 +88,7 @@ void mul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
       exit(0);
     }
 }
-//========================================================================
+//================================================
 //Finding minimum element in an array of integer values
 int array_min_int(int a[], int n) {
   int c, min, index;
@@ -105,7 +105,8 @@ int array_min_int(int a[], int n) {
 
   return index;
 }
-//=======================================================================
+
+
 //Finding minimum element in an array of float values
 float array_min_float(float a[], int n) {
   int c, index;
@@ -220,3 +221,25 @@ float array_max_float(float a[], int n) {
                 a[j] = t;
              }
    }
+
+   //Searching for an element in an array of integer values
+int array_search_int(int a[], int n, int find) {
+   int c;
+
+   for (c = 0 ;c < n ; c++ ) {
+      if (a[c] == find)
+         return c;
+   }
+    return -1;
+}
+
+//Searching for an element in an array of float values
+float array_search_float(float a[], int n, float find) {
+   int c;
+
+   for (c = 0 ;c < n ; c++ ) {
+      if (a[c] == find)
+         return c;
+   }
+    return -1;
+}
