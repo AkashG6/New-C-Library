@@ -19,7 +19,7 @@ int bin_to_dec(int a[], int n)
 	
 	if (n<1)
 	{
-		printf("Error: invalid array size passed to function bin_to_dec()\n"); //the function will throw an error if the binary number is invalid.
+		printf("Error: invalid array size passed to function bin_to_dec()\n"); //the function will throw an error if the array size is invalid.
 		exit(0);
 	}
 
@@ -53,7 +53,7 @@ int * ones_complement(int a[],int array[],int n)
 
 	if (n<1)
 	{
-		printf("Error: invalid array size passed to function ones_complement()\n"); //the function will throw an error if the binary number is invalid.
+		printf("Error: invalid array size passed to function ones_complement()\n"); //the function will throw an error if array size is invalid.
 		exit(0);
 	}
 
@@ -105,12 +105,6 @@ int * dec_to_bin(int array[],int nb,int n)
 		exit(0);
 	}
 
-	for (i = 0; i < nb; i++)
-	{
-		printf("%d",array[i] );
-	}
-	printf("\n");
-
 	return array;
 }
 
@@ -120,7 +114,7 @@ int * twos_complement(int a[], int arr[], int n)
 {
 	if (n<1)
 	{
-		printf("Error: invalid array size passed to function twos_complement()\n"); //the function will throw an error if the binary number is invalid.
+		printf("Error: invalid array size passed to function twos_complement()\n"); //the function will throw an error if array size is invalid.
 		exit(0);
 	}	
 	
@@ -148,4 +142,91 @@ int * twos_complement(int a[], int arr[], int n)
 	
 	return (a);
 }
+
+
+										//bin to hexa
+char * bin_to_hexa(char a[], int n,int array[],int n1)
+{
+	int i,j=n-1,sum=0;
+	char new_bit;
+	if ((n1%4)!=0)
+	{
+		printf("Error: source array size passed to function bin_to_hexa() should be integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
+		exit(0);	
+	}
+
+	// if (n < (n1/4)+1)
+	if (n < (n1+1)/4)
+	{
+		printf("Error: invalid destination array size passed to function bin_to_hexa().\n"); //Function will throw an error if invalid array size is passed to it. 
+		exit(0);
+	}
+
+	for (i = n1-1; i >=0 ; i--)
+	{
+		if(array[i]< 0 || array[i]> 1)
+		{
+			printf("Error: invalid binary number passed to function bin_to_hexa().\n"); //Function will throw an error if invalid binary number is passed to it. 
+			exit(0);
+		}
+
+		sum = sum + array[i]*power(2, (n1-1-i)%4);
+
+		if (i%4==0)
+		{
+			// printf("sum is : %d\n",sum);
+			if (sum>9)
+			{
+				if (sum==10)
+				{
+					new_bit='A';
+				}
+				else if (sum==11)
+				{
+					new_bit='B';
+				}
+				else if (sum==12)
+				{
+					new_bit='C';
+				}
+				else if (sum==13)
+				{
+					new_bit='D';
+				}
+				else if (sum==14)
+				{
+					new_bit='E';
+				}
+				else if (sum==15)
+				{
+					new_bit='F';
+				}
+				else
+				{
+					printf("Error\n");
+					exit(0);
+				}
+
+			}
+			else
+			{
+				// printf("i = %d , in else, sum is %d\n",i,sum );
+				//new_bit = (char) sum;
+				new_bit = sum+48;
+				// printf("in else new bit is : %c\n",new_bit );
+			}
+
+			a[j]=new_bit;
+			// printf("a[%d] = %d\n",j,a[j] );
+			j--;
+
+			new_bit=0;
+			sum = 0;
+		}
+		
+	}
+
+		return (a);
+}
+
 
