@@ -3,9 +3,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//Function to calculate a^b
-int diff_check= 0;
-
 int power(int , int );
 
 //Function to find the decimal equivalent of a binary number
@@ -36,6 +33,9 @@ int bin_to_dec(int a[], int n)
 	
 	return dec; 
 }
+
+
+//Function to calculate a^b
 
 int power(int a, int b)
 {
@@ -131,7 +131,7 @@ int * twos_complement(int a[], int arr[], int n)
 		if(flag == 0)
 		{
 			if(arr[j] == 1)
-			diff_check= 1;
+			flag= 1;
 			
 			a[j]= arr[j];
 		}
@@ -152,7 +152,7 @@ char * bin_to_hexa(char a[], int n,int array[],int n1)
 	char new_bit;
 	if ((n1%4)!=0)
 	{
-		printf("Error: source array size passed to function bin_to_hexa() should be integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
+		printf("Error: source array size passed to function bin_to_hexa() should be an integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);	
 	}
 
@@ -236,12 +236,18 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 {
 	int i,j,k,temp,no;
 
-	if (n!=4*n1)
+	for(i= 0; i< n; i++)
+	a[i]= 0;
+
+	if (n< 4*n1)
 	{
+		printf("Error: invalid destination array size passed to function bin_to_hexa() must be an integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
+
 		printf("Error: invalid destination array size passed to function hexa_to_bin(), must be a integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);
 	}
-	j=n-1;
+	
+	j= 0;
 	for (i = n1-1; i >=0 ; i--)
 	{
 		temp = array[i];
@@ -286,10 +292,10 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 
 		do
 		{
-			a[j]=no%2;
+			a[n-1-j]=no%2;
 			no=no/2;				
-			j--;
-		}while(((j%4)!=3)&&j>=0);
+			j++;
+		}while(((j%4)!=0)&&j< n);
 		
 	}
 
@@ -315,6 +321,7 @@ char * dec_to_hexa(char a[], int n,int no)
 }
 
 
+
 									// hexa to decimal
 
 
@@ -326,16 +333,6 @@ int hexa_to_dec(char array[],int n1)
 	dec = bin_to_dec(temp,n1*4);
 	return (dec);
 }
-
-
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-
-
-
 
 
 //Function to add two binary numbers
@@ -433,7 +430,6 @@ int * bin_add(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 		j--;
 	}
 	
-	if(diff_check == 0)
 	if(C == 1)
 	{
 		if(j == -1)
@@ -593,14 +589,14 @@ int * bin_to_octa(int a[], int n, int array[], int n1)
 	
 	if ((n1%3)!=0)
 	{
-		printf("Error: source array size passed to function bin_to_hexa() should be integral multiple of 3.\n"); //Function will throw an error if invalid array size is passed to it. 
+		printf("Error: source array size passed to function bin_to_octa() should be an integral multiple of 3.\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);	
 	}
 
 	// if (n < (n1/4)+1)
 	if (n < (n1+1)/3)
 	{
-		printf("Error: invalid destination array size passed to function bin_to_hexa().\n"); //Function will throw an error if invalid array size is passed to it. 
+		printf("Error: invalid destination array size passed to function bin_to_octa().\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);
 	}
 
@@ -608,7 +604,7 @@ int * bin_to_octa(int a[], int n, int array[], int n1)
 	{
 		if(array[i]< 0 || array[i]> 1)
 		{
-			printf("Error: invalid binary number passed to function bin_to_hexa().\n"); //Function will throw an error if invalid binary number is passed to it. 
+			printf("Error: invalid binary number passed to function bin_to_octa().\n"); //Function will throw an error if invalid binary number is passed to it. 
 			exit(0);
 		}
 
@@ -626,3 +622,40 @@ int * bin_to_octa(int a[], int n, int array[], int n1)
 }
 
 
+//function to return the binary equivalent of an octal number 
+
+int * octa_to_bin(int a[], int n, int array[], int n1)
+{
+	int i, j, k, no;
+
+	for(i= 0; i< n; i++)
+	a[i]= 0;
+
+	if (n < 3*n1)
+	{
+		printf("Error: invalid destination array size passed to function octa_to_bin() must be an integral multiple of 3.\n"); //Function will throw an error if invalid array size is passed to it. 
+		exit(0);
+	}
+	
+	j= 0;
+	
+	for (i = n1-1; i >=0 ; i--)
+	{
+		no = array[i];
+		if (no > 7 || no < 0)
+		{
+			printf("Error: invalid octal number passed to function octa_to_bin().\n"); //Function will throw an error if invalid octall number is passed to it. 
+			exit(0);
+		}
+
+		do
+		{
+			a[n-j-1]= no%2;
+			no= no/2;				
+			j++;
+		}while(((j%3) != 0) && j < n);
+		
+	}
+
+	return (a);
+}

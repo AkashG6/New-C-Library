@@ -72,9 +72,9 @@ int main()
 	for(i= 0; i< n1; i++)
 	scanf("%d", &arr[i]);
 	
-	a[n]= *	bin_to_octa(a, n, arr, n1);
+	a[n]= *	octa_to_bin(a, n, arr, n1);
 	
-	printf("Octa: ");
+	printf("Bin: ");
 	
 	for(i= 0; i< n; i++)
 	printf("%d ", a[i]);
