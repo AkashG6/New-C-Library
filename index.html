@@ -1,15 +1,394 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>new c library documentation</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+	<title>New C Library Documentation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="custom.css">
 </head>
 <body>
-<div class="this">
-	hello 
-	lets start
+<div class="jumbotron">
+	  <h1 style="padding-left: 75px">New C Library Documentation</h1>
+</div>
+
+<div class="container">
+  <h2>INDEX</h2>
+  <br>
+
+<div class="row">
+	  <div class="col-md-4">
+  		<h3><a href="#bin.h">bin.h</a></h3>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>	
+  	  </div>
+	  <div class="col-md-4">
+	  	<h3><a href="#arrays.h">arrays.h</a></h3>
+	  	<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+	  </div>
+	  <div class="col-md-4">
+	  	<h3><a href="#vectors.h">vectors.h</a></h3>
+	  	<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+  			this
+	  		</div>
+	  		<div class="col-md-6">
+	  			that
+	  		</div>
+  		</div>
+	  </div>
+</div>
+
+<hr>
+
+<br>
+<h2 id="bin.h">Bin.h</h2>
+<hr>
+<br>
+
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse2">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse3">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse4">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+
+ <br>
+<h2 id="arrays.h">arrays.h</h2>
+<hr>
+<br>
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse51">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse51" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse52">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse52" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse53">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse53" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse54">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse54" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+
+ <br>
+<h2 id="vectors.h">vectors.h</h2>
+<hr>
+<br>
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse101">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse101" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse102">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse102" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse103">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse103" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse104">Collapsible panel</a>
+      </h4>
+    </div>
+    <div id="collapse104" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <br>
+  <br>
+ <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+
+</div>
+
+<div >
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow79.js"></script>
+	<noscript>Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top Button</a></noscript>
 </div>
 
 </body>
