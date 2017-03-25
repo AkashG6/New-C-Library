@@ -84,29 +84,27 @@
 
 //**********ARRAY_MAX_FLOAT**********
 
-#include<stdio.h>
-#include"array.h"
-
-int main()
-{
-	int n, i;
-	
-	printf("Enter the size of the array: ");
-	scanf("%d",&n);
-	
-	float a[n];
-	
-	printf("Enter the elements: \n");
-	
-	for(i= 0; i< n; i++)
-	scanf("%f",&a[i]);
-	
-	float x= array_max_float(a, n);
-	
-	printf("array max : %f",x);
-	
-	return 0;
-	
-}
-
-
+//#include<stdio.h>
+//#include"array.h"
+//
+//int main()
+//{
+//	int n, i;
+//	
+//	printf("Enter the size of the array: ");
+//	scanf("%d",&n);
+//	
+//	float a[n];
+//	
+//	printf("Enter the elements: \n");
+//	
+//	for(i= 0; i< n; i++)
+//	scanf("%f",&a[i]);
+//	
+//	float x= array_max_float(a, n);
+//	
+//	printf("array max : %f",x);
+//	
+//	return 0;
+//	
+//}

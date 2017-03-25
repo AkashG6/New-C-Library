@@ -47,12 +47,12 @@ int array_min_int(int a[], int n) {
     }
   }
  
-  return a[index];
+  return index;
 }
 
 
 //Finding minimum element in an array of float values
-float array_min_float(float a[], int n) {
+int array_min_float(float a[], int n) {
   int c, index;
   float min;
  
@@ -66,7 +66,7 @@ float array_min_float(float a[], int n) {
     }
   }
  
-  return a[index];
+  return index;
 }
 
 //Finding maximum element in an array of integer values
@@ -83,12 +83,12 @@ int array_max_int(int a[], int n) {
     }
   }
  
-  return a[index];
+  return index;
 }
 
 
 //Finding maximum element in an array of float values
-float array_max_float(float a[], int n) {
+int array_max_float(float a[], int n) {
   int c, index;
   float max;
  
@@ -102,6 +102,66 @@ float array_max_float(float a[], int n) {
     }
   }
  
-  return a[index];
+  return index;
 }
 
+//Sorting elements in the array in ascending order
+ void array_asc_sort_int(int a[], int n)
+   {                                                           
+       int i, j, t;                                            
+                                                               
+       for(i = 1; i <= n-1; i++)                               
+          for(j = 1; j <= n-i; j++)                             
+             if(a[j-1] >= a[j])                                
+             {
+                t = a[j-1];                                    
+                a[j-1] = a[j];                                 
+                a[j] = t;                                      
+             }                                                 
+   }
+              
+//Sorting elements in the array in ascending order
+ void array_asc_sort_float(float a[], int n)
+   {                                                           
+       int i, j, t;                                            
+                                                               
+       for(i = 1; i <= n-1; i++)                               
+          for(j = 1; j <= n-i; j++)                             
+             if(a[j-1] >= a[j])                                
+             {
+                t = a[j-1];                                    
+                a[j-1] = a[j];                                 
+                a[j] = t;                                      
+             }                                                 
+   }           
+
+//Sorting elements in the array in descending order
+ void array_desc_sort_int(int a[], int n)
+   {                                                           
+       int i, j, t;                                            
+                                                               
+       for(i = 1; i <= n-1; i++)                               
+          for(j = 1; j <= n-i; j++)                             
+             if(a[j-1] <= a[j])                                
+             {
+                t = a[j-1];                                    
+                a[j-1] = a[j];                                 
+                a[j] = t;                                      
+             }                                                 
+   }           
+
+//Sorting float elements in the array in descending order
+ void array_desc_sort_float(float a[], int n)
+   {                                                           
+       int i, j;
+       float t;                                            
+                                                               
+       for(i = 1; i <= n-1; i++)                               
+          for(j = 1; j <= n-i; j++)                             
+             if(a[j-1] <= a[j])                                
+             {
+                t = a[j-1];                                    
+                a[j-1] = a[j];                                 
+                a[j] = t;                                      
+             }                                                 
+   }
