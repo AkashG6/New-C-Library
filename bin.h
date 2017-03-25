@@ -145,6 +145,8 @@ int * twos_complement(int a[], int arr[], int n)
 
 
 
+
+
 										//bin to hexa
 char * bin_to_hexa(char a[], int n,int array[],int n1)
 {
@@ -229,6 +231,74 @@ char * bin_to_hexa(char a[], int n,int array[],int n1)
 
 		return (a);
 }
+
+
+//hexa to bin
+
+int * hexa_to_bin(int a[],int n,char array[],int n1)
+{
+	int i,j,k,temp,no;
+
+	if (n!=4*n1)
+	{
+		printf("Error: invalid destination array size passed to function bin_to_hexa() must be a integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
+		exit(0);
+	}
+	j=n-1;
+	for (i = n1-1; i >=0 ; i--)
+	{
+		temp = array[i];
+		if (temp>=48&&temp<=57)
+		{
+			no = temp - 48;
+
+		}
+		else
+		{
+			if (temp==65||temp==97)
+			{
+				no = 10;
+			}
+			else if (temp==66||temp==98)
+			{
+				no = 11;
+			}
+			else if (temp==67||temp==99)
+			{
+				no = 12;
+			}
+			else if (temp==68||temp==100)
+			{
+				no = 13;
+			}
+			else if (temp==69||temp==101)
+			{
+				no = 14;
+			}
+			else if (temp==70||temp==102)
+			{
+				no = 15;
+			}
+			else
+			{
+				printf("Error: invalid input passed to function bin_to_hexa().\n"); //Function will throw an error if invalid array size is passed to it. 
+				exit(0);
+			}
+		}
+
+
+		do
+		{
+			a[j]=no%2;
+			no=no/2;				
+			j--;
+		}while(((j%4)!=3)&&j>=0);
+		
+	}
+
+	return (a);
+}
+
 
 
 //Function to add two binary numbers
