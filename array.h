@@ -2,23 +2,58 @@
 #include<stdio.h>
 #include<stdlib.h>
 //===================================
-int r,c;
+/*Taking Input From the User */
+void Fread_mat(int m,int n,float (*a)[n])
+{
+    int i,j;
+    for(i=0;i<m;i++)
+    {
+      for(j=0;j<n;j++)
+      {
+		    printf("\nEnter Element in Matrix[%d][%d] : ",i+1,j+1);
+        scanf("%f",&a[i][j]);
+      }
+    }
+}
+void Iread_mat(int m,int n,int (*a)[n])
+{
+    int i,j;
+    for(i=0;i<m;i++)
+    {
+      for(j=0;j<n;j++)
+      {
+		    printf("\nEnter Element in Matrix[%d][%d] : ",i+1,j+1);
+        scanf("%d",&a[i][j]);
+      }
+    }
+}
 //===============================
-void prt_mat(int m,int n,int (*mat)[n])
+void Iprt_mat(int m,int n,int (*mat)[n])
 {
   int i,j;
-  r=m;
-  c=n;
   for(i=0;i<m;i++)
   {
     for(j=0;j<n;j++)
     {
-      printf("\n Matrix[%d][%d]=%d\n",i+1,j+1,mat[i][j]);
+      printf("%d\t",mat[i][j]);
     }
+    printf("\n");
+  }
+}
+void Fprt_mat(int m,int n,float (*mat)[n])
+{
+  int i,j;
+  for(i=0;i<m;i++)
+  {
+    for(j=0;j<n;j++)
+    {
+      printf("%f\t",mat[i][j]);
+    }
+    printf("\n");
   }
 }
 //==========================================================================
-void add_mat(int m,int n,int p,int q,int (*add)[n],int (*a)[n],int (*b)[q])
+void Iadd_mat(int m,int n,int p,int q,int (*add)[n],int (*a)[n],int (*b)[q])
 {
   int i,j;
   if(p==m && q==n)
@@ -37,8 +72,28 @@ void add_mat(int m,int n,int p,int q,int (*add)[n],int (*a)[n],int (*b)[q])
     exit(0);
   }
 }
+void Fadd_mat(int m,int n,int p,int q,float (*add)[n],float (*a)[n],float (*b)[q])
+{
+  int i,j;
+  if(p==m && q==n)
+  {
+      for(i=0;i<m;i++)
+      {
+        for(j=0;j<n;j++)
+        {
+          add[i][j]=a[i][j]+b[i][j];
+        }
+      }
+  }
+  else
+  {
+    printf("Error : Can't Add! now of rows and columns are not equal in matrices\n");
+    exit(0);
+  }
+}
+
 //========================================================================
-void sub_mat(int m,int n,int p,int q,int (*sub)[n],int (*a)[n],int (*b)[q])
+void Isub_mat(int m,int n,int p,int q,int (*sub)[n],int (*a)[n],int (*b)[q])
 {
   int i,j;
   if(p==m && q==n)
@@ -57,9 +112,58 @@ void sub_mat(int m,int n,int p,int q,int (*sub)[n],int (*a)[n],int (*b)[q])
     exit(0);
   }
 }
+void Fsub_mat(int m,int n,int p,int q,float (*sub)[n],float (*a)[n],float (*b)[q])
+{
+  int i,j;
+  if(p==m && q==n)
+  {
+      for(i=0;i<m;i++)
+      {
+        for(j=0;j<n;j++)
+        {
+          sub[i][j]=a[i][j]-b[i][j];
+        }
+      }
+  }
+  else
+  {
+    printf("Error : Can't subtract! now of rows and columns are not equal in matrices\n");
+    exit(0);
+  }
+}
+
 //========================================================================
 /*Matrix MULTIPLICATION */
-void mul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
+void Imul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
+{
+    int i,j,k;
+    if(n==p)
+    {
+      for(i=0;i<m;i++)
+      {
+        for(j=0;j<q;j++)
+        {
+          mul[i][j]=0;
+        }
+      }
+      for(i=0;i<m;i++)
+      {
+        for(j=0;j<q;j++)
+        {
+          for (k=0;k<p;k++)
+          {
+             mul[i][j]=mul[i][j]+(a[i][k]*b[k][j]);
+          }
+        }
+      }
+    }
+    else
+    {
+      printf("Error : Can't Multiply! number of columns in 1st matrix is not equal to number of rows in the 2nd matrix.\n ");
+      exit(0);
+    }
+}
+void Fmul_mat(int m,int n,int p,int q,float (*mul)[q],float (*a)[n],float (*b)[q])
 {
     int i,j,k;
     if(n==p)
@@ -90,7 +194,7 @@ void mul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
 }
 //================================================
 /*calculate Transpose*/
-void transpose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
+void Itranspose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
 {
     int i,j;
     for(i=0;i<m;i++)
@@ -100,6 +204,252 @@ void transpose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
            mt[i][j]=mx[j][i];
          }
      }
+}
+void Ftranspose_mat(int m,int n,float (*mt)[n],float (*mx)[n])
+{
+    int i,j;
+    for(i=0;i<m;i++)
+     {
+         for(j=0;j<n;j++)
+         {
+           mt[i][j]=mx[j][i];
+         }
+     }
+}
+//=================================================
+/*For calculating Determinant of the Matrix */
+float Fdeterminant_mat(int k,int l,float (*a)[l])
+{
+  if(k==l)
+  {
+    float s = 1, det = 0, b[k][l];
+    int i, j, m, n, c;
+    if (k == 1)
+      {
+       return (a[0][0]);
+      }
+    else
+      {
+       det = 0;
+       for (c = 0; c < k; c++)
+         {
+          m = 0;
+          n = 0;
+          for (i = 0;i < k; i++)
+            {
+              for (j = 0 ;j < l; j++)
+                {
+                  b[i][j] = 0;
+                  if (i != 0 && j != c)
+                   {
+                    b[m][n] = a[i][j];
+                     if (n < (k - 2))
+                      n++;
+                     else
+                      {
+                       n = 0;
+                       m++;
+                       }
+                     }
+                 }
+               }
+            det = det + s * (a[0][c] * Fdeterminant_mat( k - 1,l-1,b));
+            s = -1 * s;
+          }
+      }
+      return (det);
+    }
+    else
+    {
+      printf("Error : Can't find Determinant! Given matrix is not Square Matrix \n");
+      exit(0);
+    }
+}
+float Ideterminant_mat(int k,int l,int (*a)[l])
+{
+  if(k==l)
+  {
+    int s = 1, det = 0, b[k][l];
+    int i, j, m, n, c;
+    if (k == 1)
+      {
+       return (a[0][0]);
+      }
+    else
+      {
+       det = 0;
+       for (c = 0; c < k; c++)
+         {
+          m = 0;
+          n = 0;
+          for (i = 0;i < k; i++)
+            {
+              for (j = 0 ;j < l; j++)
+                {
+                  b[i][j] = 0;
+                  if (i != 0 && j != c)
+                   {
+                    b[m][n] = a[i][j];
+                     if (n < (k - 2))
+                      n++;
+                     else
+                      {
+                       n = 0;
+                       m++;
+                       }
+                     }
+                 }
+               }
+            det = det + s * (a[0][c] * Ideterminant_mat( k - 1,l-1,b));
+            s = -1 * s;
+          }
+      }
+      return (det);
+    }
+    else
+    {
+      printf("Error : Can't find Determinant! Given matrix is not Square Matrix \n");
+      exit(0);
+    }
+}
+
+//================================================
+/*  COFACTOR MATRIX  */
+float powerup(int e,int q)
+{
+  int i,re=1;
+  for (i=0;i<q;i++)
+  {
+     re=re*e;
+  }
+  return re;
+}
+void Fcofactor_mat(int f,int g,float (*fac)[f],float (*num)[f])
+{
+  if(f==g)
+  {
+     float b[f][g];
+     int p, q, m, n, i, j;
+     for (q = 0;q < f; q++)
+     {
+       for (p = 0;p < g; p++)
+        {
+         m = 0;
+         n = 0;
+         for (i = 0;i < f; i++)
+         {
+              for (j = 0;j < g; j++)
+              {
+                if (i != q && j != p)
+                {
+                  b[m][n] = num[i][j];
+                  if (n < (f - 2))
+                      n++;
+                  else
+                  {
+                      n = 0;
+                      m++;
+                  }
+                }
+             }
+          }
+          fac[q][p] = powerup(-1, q + p) * Fdeterminant_mat(f - 1 ,f - 1 , b);
+        }
+      }
+    }
+    else
+    {
+      printf("Error : Can't find Co-factor! Given matrix is not Square Matrix \n");
+      exit(0);
+    }
+}
+void Icofactor_mat(int f,int g,int (*fac)[f],int (*num)[f])
+{
+  if(f==g)
+  {
+     int b[f][g];
+     int p, q, m, n, i, j;
+     for (q = 0;q < f; q++)
+     {
+       for (p = 0;p < g; p++)
+        {
+         m = 0;
+         n = 0;
+         for (i = 0;i < f; i++)
+         {
+              for (j = 0;j < g; j++)
+              {
+                if (i != q && j != p)
+                {
+                  b[m][n] = num[i][j];
+                  if (n < (f - 2))
+                      n++;
+                  else
+                  {
+                      n = 0;
+                      m++;
+                  }
+                }
+             }
+          }
+          fac[q][p] = powerup(-1, q + p) * Ideterminant_mat(f - 1 ,f - 1 , b);
+        }
+      }
+    }
+    else
+    {
+      printf("Error : Can't find Co-factor! Given matrix is not Square Matrix \n");
+      exit(0);
+    }
+}
+
+//===============================================
+/* Inverse of MATRIX*/
+void Iinverse_mat(int m,int n,int (*inverse)[n],int (*mat)[n])
+{
+  if(m==n)
+  {
+      int i,j;
+      int b[m][n],fac[m][n],d;
+      Icofactor_mat(m,n,fac,mat);
+      Itranspose_mat(m,n,b,fac);
+      d = Ideterminant_mat(m, n,mat);
+      for (i = 0;i < m; i++)
+        {
+         for (j = 0;j < n; j++)
+           {
+            inverse[i][j] = b[i][j]/d;
+            }
+        }
+  }
+  else
+  {
+    printf("Error : Can't find Inverse! Given matrix is not Square Matrix \n");
+    exit(0);
+  }
+}
+void Finverse_mat(int m,int n,float (*inverse)[n],float (*mat)[n])
+{
+  if(m==n)
+  {
+      int i,j;
+      float b[m][n],fac[m][n],d;
+      Fcofactor_mat(m,n,fac,mat);
+      Ftranspose_mat(m,n,b,fac);
+      d = Fdeterminant_mat(m, n,mat);
+      for (i = 0;i < m; i++)
+        {
+         for (j = 0;j < n; j++)
+           {
+            inverse[i][j] = b[i][j]/d;
+            }
+        }
+  }
+  else
+  {
+    printf("Error : Can't find Inverse! Given matrix is not Square Matrix \n");
+    exit(0);
+  }
 }
 //================================================
 //Finding minimum element in an array of integer values
@@ -261,27 +611,27 @@ float array_search_float(float a[], int n, float find) {
 int array_sum_int(int a[], int n)
   {
     int i,sum = 0;
-    
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
     }
-    
+
     return sum;
   }
-  
+
 //Sum of float array elements
 
 float array_sum_float(float a[], int n)
   {
     int i;
     float sum = 0;
-    
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
     }
-    
+
     return sum;
   }
 
@@ -290,26 +640,26 @@ float array_sum_float(float a[], int n)
 float array_avg_int(int a[], int n)
   {
     int i,sum = 0;
-    
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
     }
-    
+
     return sum/n;
   }
-  
+
 //Sum of float array elements
 
 float array_avg_float(float a[], int n)
   {
     int i;
     float sum = 0;
-    
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
     }
-    
+
     return sum/n;
   }
