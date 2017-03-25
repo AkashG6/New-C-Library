@@ -3,56 +3,61 @@
 
 int main()
 {
-	struct vector* ilist = create_vector();
+    struct vector* vname = create_vector();
+    
+    insert_first(vname, 65);
+    
+    insert_first(vname, 88);
+	  
+	insert_last(vname,122);
 	
-	insert_last(ilist, 98);
-	insert_last(ilist, 121);
-	insert_last(ilist, 75);
-	insert_first(ilist, 89);
+	insert_at(vname, 2, 77);
 	
-	delete_first(ilist);
-	delete_last(ilist);
 	
-	insert_first(ilist, 100);
 	
-	insert_at(ilist, 3, 67);
+	int first = (int) get_first(vname);
+	printf("\nFirst:%d",first);
 	
-	delete_at(ilist, 3);
+	printf("\nLast:%c",(char) get_last(vname));
 	
-	int i = (int) display_first(ilist);
-	char c = (char) display_last(ilist);
-	float f = (float) display_at(ilist,3);
-	printf("%d",i);
-	printf("\n%c",c);
-	printf("\n%f",f);
+	printf("\nAt:%f",(float) get_at(vname, 1));
 	
-	int count = vector_length(ilist);
 	
-	printf("\nilist:");
-	display_int(ilist);
-	printf("\nclist:");
-	display_char(ilist);
-	printf("\nflist:");
-	display_float(ilist);
+    printf("\nVname Before:");
+    display_int(vname);
+    
+	printf("\nLenght before:%d",vector_length(vname));
+    
+    
+    
+    struct vector* new_vname = clone_vector(vname);
+    
+    
+	delete_first(vname);
+    
+    delete_last(vname);
+    
+	delete_at(vname, 1);
+    
+    
 	
-	printf("\nilistt length:%d",count);
+	printf("\nVname After:");
+    display_int(vname);
+    
+	printf("\nLenght after:%d",vector_length(vname));
+    
+    printf("\nNew Vname:");
+    printf("\n");
+    
+	display_int(new_vname);
+    printf("\n");
+    
+	display_char(new_vname);
+    printf("\n");
+    
+	display_float(new_vname);
+    
 	
-	struct vector* dlist = clone_vector(ilist);
-	printf("\ndlist:");
-	display_int(dlist);
-	printf("\ndlist:");
-	display_char(dlist);
-	printf("\ndlist:");
-	display_float(dlist);
-	
-	clear_vector(ilist);
-	printf("\nilist length:%d",vector_length(ilist));
-	
-	printf("\ndlist:");
-	display_int(dlist);
-	printf("\ndlist:");
-	display_char(dlist);
-	printf("\ndlist:");
-	display_float(dlist);
+	printf("\nLenght new vname:%d",vector_length(new_vname));
 	
 }

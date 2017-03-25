@@ -239,7 +239,7 @@ void display_float(struct vector* start)
 	
 }
 
-float display_first(struct vector* start)
+float get_first(struct vector* start)
 {
 	if(!is_empty(start))
 		return(start->next->fdata);
@@ -251,7 +251,7 @@ float display_first(struct vector* start)
 	}
 }
 
-float display_last(struct vector* start)
+float get_last(struct vector* start)
 {
 	if(!is_empty(start))
 	{
@@ -275,17 +275,17 @@ float display_last(struct vector* start)
 	}
 }
 
-float display_at(struct vector* start, int index)
+float get_at(struct vector* start, int index)
 {
 	struct vector* temp = start;
 	struct vector* store;
 	int c=-1;
 	
 	if(index==0)
-	display_first(start);
+	get_first(start);
 	
 	else if(index==vector_length(start))
-	display_last(start);
+	get_last(start);
 	
 	else if(index>vector_length(start) || index<0)
 	{
