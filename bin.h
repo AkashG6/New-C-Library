@@ -363,4 +363,79 @@ int * bin_add(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 
 }
 
+int * bin_mult(int a[], int n, int arr1[], int n1, int arr2[], int n2)
+{
+	//checking whether any of the array sizes are invalid
+	
+	if(n < (n1+n2) || n<= 0 || n1<= 0 || n2<= 0)
+	{
+		printf("Error: invalid array size passed to function bin_add()\n");
+		exit(0);
+	}
+	
+	int C= 0, s, i, j, k, l, temp[n2], acc[n1];
+	
+	for(j= 0; j< n; j++)
+	a[j]= 0;
+	
+	for(j= 0; j< n1; j++)
+	acc[j]= 0;
+	
+	for(j= 0; j< n2; j++)
+	temp[j]= arr2[j];
+	
+	for(k= 0; k< n2; k++)
+	{
+		if(temp[n2-1] == 1)
+		{
+			//Add
+			
+			for(i= n1- 1; i>= 0; i--)
+			{
+				s= acc[i]+ arr1[i]+ C;
+		
+				if(s== 1 || s== 0)
+				{
+					acc[i]= s;
+					C= 0;
+				}
+
+				else if(s == 2)
+				{
+					acc[i]= 0;
+					C= 1;
+				}
+
+				else if(s == 3)
+				{
+					acc[i]= 1;
+					C= 1;
+				}
+			}
+		}
+		
+		//Shift
+
+		for(j= n2- 1; j>= 1; j--)
+		temp[j]= temp[j- 1];
+
+		temp[0]= acc[n1- 1];
+
+		for(j= n1- 1; j>= 1; j--)
+		acc[j]= acc[j- 1];
+
+		acc[0]= C;
+		C= 0;
+	}
+	
+	//copying temp[] to a[]
+	
+	for(j= n- 1, l= n2- 1; l>= 0; j--, l--)
+	a[j]= temp[l];
+	
+	for(l= n1- 1; l>= 0; l--, j--)
+	a[j]= acc[l]; 
+	
+	return(a);
+}
 
