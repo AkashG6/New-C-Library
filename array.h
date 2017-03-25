@@ -13,7 +13,7 @@ void prt_mat(int m,int n,int (*mat)[n])
   {
     for(j=0;j<n;j++)
     {
-      printf("\n Matrix[%d][%d]=%d\n",i+1,j+1,mat[m][n]);
+      printf("\n Matrix[%d][%d]=%d\n",i+1,j+1,mat[i][j]);
     }
   }
 }
@@ -89,6 +89,19 @@ void mul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
     }
 }
 //================================================
+/*calculate Transpose*/
+void transpose_mat(int n,int (*mt)[n],int (*m)[n])
+{
+    int i,j;
+    for(i=0;i<n;i++)
+     {
+         for(j=0;j<n;j++)
+         {
+           mt[i][j]=m[j][i];
+         }
+     }
+}
+//================================================
 //Finding minimum element in an array of integer values
 int array_min_int(int a[], int n) {
   int c, min, index;
@@ -105,7 +118,6 @@ int array_min_int(int a[], int n) {
 
   return index;
 }
-
 
 //Finding minimum element in an array of float values
 float array_min_float(float a[], int n) {
