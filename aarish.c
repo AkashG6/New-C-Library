@@ -50,9 +50,9 @@ int main()
 	for(i= 0; i< n2; i++)
 	scanf("%d",&arr2[i]);
 	
-	a[n]= *bin_mult(a, n, arr1, n1, arr2, n2);
+	a[n]= *bin_diff(a, n, arr1, n1, arr2, n2);
 	
-	printf("Product: ");
+	printf("Difference: ");
 	
 	for(i= 0; i< n; i++)
 	printf("%d ",a[i]);

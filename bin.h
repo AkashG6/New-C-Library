@@ -4,7 +4,7 @@
 #include<stdlib.h>
 
 //Function to calculate a^b
-
+int diff_check= 0;
 
 int power(int , int );
 
@@ -131,7 +131,7 @@ int * twos_complement(int a[], int arr[], int n)
 		if(flag == 0)
 		{
 			if(arr[j] == 1)
-			flag= 1;
+			diff_check= 1;
 			
 			a[j]= arr[j];
 		}
@@ -326,12 +326,13 @@ int * bin_add(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 		j--;
 	}
 	
+	if(diff_check == 0)
 	if(C == 1)
 	{
 		if(j == -1)
 		{
-			//if carry is 1 and there is no space left in th destination array, then the function throws an error
-			printf("Error: invalid array size passed to function bin_add()\n");
+			//if carry is 1 and there is no space left in the destination array, then the function throws an error
+			printf("Error: invalid array size passed to function bin_addDDDDD()\n");
 			exit(0);
 		}
 		
@@ -369,7 +370,7 @@ int * bin_mult(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 	
 	if(n < (n1+n2) || n<= 0 || n1<= 0 || n2<= 0)
 	{
-		printf("Error: invalid array size passed to function bin_add()\n");
+		printf("Error: invalid array size passed to function bin_mult()\n");
 		exit(0);
 	}
 	
@@ -439,3 +440,32 @@ int * bin_mult(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 	return(a);
 }
 
+
+//function to return the difference between two binary numbers 
+
+int * bin_diff(int a[], int n, int arr1[], int n1, int arr2[], int n2)
+{
+	//checking whether any of the array sizes are invalid
+	
+	if(n<= 0 || n1<= 0 || n2<= 0)
+	{
+		printf("Error: invalid array size passed to function bin_diff()\n");
+		exit(0);
+	}
+	
+	int C= 0, s, i, j, k;
+	
+	for(i= 0; i< n; i++)
+	a[i]= 0;
+	
+	int dec1= bin_to_dec(arr1, n1);
+	int dec2= bin_to_dec(arr2, n2);
+	
+	if(dec1> dec2)
+	a[n]= *dec_to_bin(a, n, dec1- dec2);
+	
+	else
+	a[n]= *dec_to_bin(a, n, dec2- dec1);
+	
+	return(a);
+}
