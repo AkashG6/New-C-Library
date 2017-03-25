@@ -175,7 +175,7 @@ char * bin_to_hexa(char a[], int n,int array[],int n1)
 
 		if (i%4==0)
 		{
-			// printf("sum is : %d\n",sum);
+
 			if (sum>9)
 			{
 				if (sum==10)
@@ -211,14 +211,13 @@ char * bin_to_hexa(char a[], int n,int array[],int n1)
 			}
 			else
 			{
-				// printf("i = %d , in else, sum is %d\n",i,sum );
-				//new_bit = (char) sum;
+
 				new_bit = sum+48;
-				// printf("in else new bit is : %c\n",new_bit );
+
 			}
 
 			a[j]=new_bit;
-			// printf("a[%d] = %d\n",j,a[j] );
+
 			j--;
 
 			new_bit=0;
@@ -296,6 +295,33 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 
 	return (a);
 }
+
+
+                                     //dec to hexa
+char * dec_to_hexa(char a[], int n,int no)
+{
+	int temp[4*n],i;
+	if (no<0)
+	{
+		printf("Error: cannot pass negative number to function dec_to_hexa().\n");
+		exit(0);
+	}
+	temp[4*n] = *dec_to_bin(temp,4*n,no);
+
+	a[n] = *bin_to_hexa(a,n,temp,4*n);
+
+
+	return (a);
+}
+
+
+
+
+
+
+
+
+
 
 
 
