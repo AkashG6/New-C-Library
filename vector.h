@@ -239,6 +239,72 @@ void display_float(struct vector* start)
 	
 }
 
+float display_first(struct vector* start)
+{
+	if(!is_empty(start))
+		return(start->next->fdata);
+	
+	else
+	{
+		printf("\nError: vector is empty");
+		exit(0);
+	}
+}
+
+float display_last(struct vector* start)
+{
+	if(!is_empty(start))
+	{
+		struct vector *temp;
+		temp=start->next;
+        int c=0;	
+	
+		while(temp!=NULL && c!=vector_length()-1)
+   		{
+    		c++;
+    		temp=temp->next;
+		}
+		
+		return(temp->fdata);
+	}
+	
+	else
+	{
+		printf("\nError: vector is empty");
+		exit(0);
+	}
+}
+
+float display_at(struct vector* start, int index)
+{
+	struct vector* temp = start;
+	struct vector* store;
+	int c=-1;
+	
+	if(index==0)
+	display_first(start);
+	
+	else if(index==vector_length(start))
+	display_last(start);
+	
+	else if(index>vector_length(start) || index<0)
+	{
+		printf("\nError: large/invalid index passed to display_at() function\n");
+		exit(0);
+	}
+	
+	else
+	{
+		while(temp->next!=NULL && c!=index-1)
+		{
+			c++;
+			temp = temp->next;
+		}
+		
+        return(temp->next->fdata);
+	}
+}
+
 int vector_length(struct vector* start)
 {
 	struct vector* temp = start->next;
