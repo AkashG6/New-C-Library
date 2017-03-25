@@ -241,9 +241,7 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 
 	if (n< 4*n1)
 	{
-		printf("Error: invalid destination array size passed to function bin_to_hexa() must be an integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
-
-		printf("Error: invalid destination array size passed to function hexa_to_bin(), must be a integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
+		printf("Error: insufficient destination array size passed to function bin_to_hexa() must be an integral multiple of 4.\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);
 	}
 	
@@ -625,7 +623,7 @@ int * bin_to_octa(int a[], int n, int array[], int n1)
 //function to return the binary equivalent of an octal number 
 
 int * octa_to_bin(int a[], int n, int array[], int n1)
-{
+{	
 	int i, j, k, no;
 
 	for(i= 0; i< n; i++)
@@ -633,7 +631,7 @@ int * octa_to_bin(int a[], int n, int array[], int n1)
 
 	if (n < 3*n1)
 	{
-		printf("Error: invalid destination array size passed to function octa_to_bin() must be an integral multiple of 3.\n"); //Function will throw an error if invalid array size is passed to it. 
+		printf("Error: insufficient destination array size passed to function octa_to_bin() must be an integral multiple of 3.\n"); //Function will throw an error if invalid array size is passed to it. 
 		exit(0);
 	}
 	
@@ -658,4 +656,31 @@ int * octa_to_bin(int a[], int n, int array[], int n1)
 	}
 
 	return (a);
+}
+
+
+//function to return the binary equivalent of an octal number 
+int octa_to_dec(int a[], int n)
+{
+	
+	int i, dec= 0;
+	
+	if (n<1)
+	{
+		printf("Error: invalid array size passed to function octa_to_dec()\n"); //the function will throw an error if the array size is invalid.
+		exit(0);
+	}
+
+	for(i= n- 1; i>= 0; i--)
+	{
+		if(a[i]< 0 || a[i]> 7)
+		{
+			printf("Error: invalid octal number passed to function octa_to_dec().\n"); //Function will throw an error if invalid octal number is passed to it. 
+			exit(0);
+		}
+		
+		dec= dec+ a[i]*power(8, n-1-i);
+	}
+	
+	return dec; 
 }
