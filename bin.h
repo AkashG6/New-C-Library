@@ -144,10 +144,8 @@ int * twos_complement(int a[], int arr[], int n)
 }
 
 
+//bin to hexa
 
-
-
-										//bin to hexa
 char * bin_to_hexa(char a[], int n,int array[],int n1)
 {
 	int i,j=n-1,sum=0;
@@ -434,6 +432,9 @@ int * bin_add(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 
 }
 
+
+//function to return the product of two binary numbers 
+
 int * bin_mult(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 {
 	//checking whether any of the array sizes are invalid
@@ -539,3 +540,50 @@ int * bin_diff(int a[], int n, int arr1[], int n1, int arr2[], int n2)
 	
 	return(a);
 }
+
+
+//function to return the octal equivalent of a binary number 
+
+int * bin_to_octa(int a[], int n, int array[], int n1)
+{
+	
+	int i, j= n-1, sum= 0;
+	
+	for(i= 0; i< n; i++)
+	a[i]= 0;
+	
+	if ((n1%3)!=0)
+	{
+		printf("Error: source array size passed to function bin_to_hexa() should be integral multiple of 3.\n"); //Function will throw an error if invalid array size is passed to it. 
+		exit(0);	
+	}
+
+	// if (n < (n1/4)+1)
+	if (n < (n1+1)/3)
+	{
+		printf("Error: invalid destination array size passed to function bin_to_hexa().\n"); //Function will throw an error if invalid array size is passed to it. 
+		exit(0);
+	}
+
+	for (i = n1-1; i >=0 ; i--)
+	{
+		if(array[i]< 0 || array[i]> 1)
+		{
+			printf("Error: invalid binary number passed to function bin_to_hexa().\n"); //Function will throw an error if invalid binary number is passed to it. 
+			exit(0);
+		}
+
+		sum = sum + array[i]*power(2, (n1-1-i)%3);
+	
+		if (i%3==0)
+		{
+			a[j]= sum;
+			j--;
+			sum = 0;
+		}
+	}
+
+	return (a);
+}
+
+
