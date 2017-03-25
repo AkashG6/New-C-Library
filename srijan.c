@@ -1,18 +1,36 @@
 #include<stdio.h>
 #include"array.h"
-int main(int argc, char const *argv[])
+int main(void)
 {
-  int m,n;
-  float a[m][n];
-  printf("\nEnter the row and column :" );
+  int m,n,i,j,p,q;
+  printf("\nEnter the row and column mat1 :" );
   scanf("%d%d",&m,&n );
-  for (size_t i = 0; i <m; i++) {
-    for (size_t j = 0; j < n; j++) {
-      printf("\nEnter the element in the Matrix[%d][%d]:",i,j);
-      scanf("%f"&a[i][j]);
+  printf("\nEnter the row and column mat2:" );
+  scanf("%d%d",&p,&q );
+  int a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q],tr[q][m];
+  for (i=0;i<m;i++)
+   {
+    for (j=0;j<n;j++)
+     {
+      printf("\nEnter the element in the Matrix[%d][%d]:",i+1,j+1);
+      scanf("%d",&a[i][j]);
     }
   }
-  prt_mat(m,n,&a);
+  prt_mat(m,n,a);
+  for (i = 0; i <p; i++)
+   {
+    for (j = 0; j < q; j++)
+     {
+      printf("\nEnter the element in the Matrix[%d][%d]:",i,j);
+      scanf("%d",&b[i][j]);
+    }
+  }
+  prt_mat(p,q,b);
+  add_mat(m,n,p,q,mul,a,b);
+  prt_mat(m,q,mul);
+
+  transpose_mat(m,q,tr,mul);
+  prt_mat(q,m,tr);
 
   return 0;
 }
