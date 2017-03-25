@@ -9,6 +9,15 @@ struct vector
 	struct vector* next;
 };
 
+int is_empty(struct vector* start)
+{
+	if(start->next==NULL)
+	return(1);
+	
+	else
+	return(0);
+}
+
 struct vector* create_vector()
 {
 	struct vector* node;
@@ -52,38 +61,97 @@ void insert_first(struct vector* start, float data)
 	 node->fdata=data;
 }
 
+void delete_first(struct vector* start)
+{
+	if(!is_empty(start))
+	{
+		struct vector* temp = start->next;
+	
+		start->next=temp->next;
+	
+		free(temp);
+	}
+	
+	else
+	printf("\nERROR: VECTOR IS EMPTY !");	
+}
+
+void delete_last(struct vector* start)
+{
+	if(!is_empty(start))
+	{
+		struct vector* temp = start->next;
+		struct vector* store;
+	
+		while(temp->next->next!=NULL)
+		temp=temp->next;
+	
+		store = temp->next;
+		temp->next = NULL;
+	
+		free(store);
+	}
+	
+	else
+	printf("\nERROR: VECTOR IS EMPTY !");
+}
+
 void display_int(struct vector* start)
 {
-	struct vector *temp;
-	temp=start->next;
+	if(!is_empty(start))
+	{
+		struct vector *temp;
+		temp=start->next;
 	
 	
-	while(temp!=NULL)
-    {
-    	printf("%d  ",temp->idata);
-    	temp=temp->next;
+		while(temp!=NULL)
+   		{
+    		printf("%d  ",temp->idata);
+    		temp=temp->next;
+		}
 	}
+	
+	else
+	printf("\nERROR: VECTOR IS EMPTY !");
 	
 }
 
 void display_char(struct vector* start)
 {
-	struct vector* temp = start->next;
-	
-	while(temp!=NULL)
+	if(!is_empty(start))
 	{
-		printf("%c  ",temp->cdata);
-		temp=temp->next;
+		struct vector *temp;
+		temp=start->next;
+	
+	
+		while(temp!=NULL)
+   		{
+    		printf("%c  ",temp->cdata);
+    		temp=temp->next;
+		}
 	}
+	
+	else
+	printf("\nERROR: VECTOR IS EMPTY !");
+	
 }
 
 void display_float(struct vector* start)
 {
-	struct vector* temp = start->next;
-	
-	while(temp!=NULL)
+	if(!is_empty(start))
 	{
-		printf("%f  ",temp->fdata);
-		temp=temp->next;
+		struct vector *temp;
+		temp=start->next;
+	
+	
+		while(temp!=NULL)
+   		{
+    		printf("%f  ",temp->fdata);
+    		temp=temp->next;
+		}
 	}
+	
+	else
+	printf("\nERROR: VECTOR IS EMPTY !");
+	
 }
