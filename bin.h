@@ -317,6 +317,9 @@ char * dec_to_hexa(char a[], int n,int no)
 }
 
 
+									// hexa to decimal
+
+
 
 
 

@@ -119,25 +119,27 @@ int main()
 
 										// decimal to hexadecimal
 
-	int i,n,no;
-	printf("Enter decimal number\n");
-	scanf("%d",&no);
-	printf("Enter size of destination array\n");
-	scanf("%d",&n);
+	// int i,n,no;
+	// printf("Enter decimal number\n");
+	// scanf("%d",&no);
+	// printf("Enter size of destination array\n");
+	// scanf("%d",&n);
 
-	char a[n];
+	// char a[n];
 
-	a[n] = *dec_to_hexa(a,n,no);
+	// a[n] = *dec_to_hexa(a,n,no);
 
-	for (i = 0; i < n; i++)
-	{
-		printf("%c",a[i]);
-	}
-	printf("\n");
+	// for (i = 0; i < n; i++)
+	// {
+	// 	printf("%c",a[i]);
+	// }
+	// printf("\n");
 	
-	printf("The no. was %d\n",no);
+	// printf("The no. was %d\n",no);
 
-	printf("\n");
+	// printf("\n");
+
+										// hexa to decimal
 
 } // END OF MAIN
 
