@@ -30,8 +30,8 @@ int main()
 	for(i= 0; i< n; i++)
 	printf("%d ", a[i]);*/
 	
-	/////////////////////////////////////////////////Bin add
-	int n, n1, n2, i, ans;
+	/////////////////////////////////////////////////Bin add mult diff
+	/*int n, n1, n2, i, ans;
 	
 	printf("Enter the size of the array1: ");
 	scanf("%d",&n1);
@@ -55,7 +55,29 @@ int main()
 	printf("Difference: ");
 	
 	for(i= 0; i< n; i++)
-	printf("%d ",a[i]);
+	printf("%d ",a[i]);*/
+	
+	
+	int n, n1;
+	
+	printf("Enter the size of the source array: ");
+	scanf("%d",&n1);
+	printf("Enter the size of the destination array: ");
+	scanf("%d",&n);
+	
+	int i, a[n], arr[n1];
+	
+	printf("Enter the elements of the array:\n");
+	
+	for(i= 0; i< n1; i++)
+	scanf("%d", &arr[i]);
+	
+	a[n]= *	bin_to_octa(a, n, arr, n1);
+	
+	printf("Octa: ");
+	
+	for(i= 0; i< n; i++)
+	printf("%d ", a[i]);
 	
 	return 0;
 }
