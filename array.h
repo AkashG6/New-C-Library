@@ -173,23 +173,83 @@ float array_max_float(float a[], int n) {
    }
    
    //Searching for an element in an array of integer values
-int array_search_int(int a[], int n, int find) {
-   int c;
- 
-   for (c = 0 ;c < n ; c++ ) {
-      if (a[c] == find)
-         return c;
-   }
-    return -1;
-}
+int array_search_int(int a[], int n, int find) 
+	{
+	   int c;
+	 
+	   for (c = 0 ;c < n ; c++ ) {
+	      if (a[c] == find)
+	         return c;
+	   }
+	    return -1;
+	}
 
 //Searching for an element in an array of float values
-float array_search_float(float a[], int n, float find) {
-   int c;
- 
-   for (c = 0 ;c < n ; c++ ) {
-      if (a[c] == find)
-         return c;
-   }
-    return -1;
-}
+int array_search_float(float a[], int n, float find) 
+	{
+	   int c;
+	 
+	   for (c = 0 ;c < n ; c++ ) {
+	      if (a[c] == find)
+	         return c;
+	   }
+	    return -1;
+	}
+
+//Sum of integer array elements
+
+int array_sum_int(int a[], int n)
+	{
+		int i,sum = 0;
+		
+		for(i=0;i<n;i++)
+		{
+			sum += a[i];
+		}
+		
+		return sum;
+	}
+	
+//Sum of float array elements
+
+float array_sum_float(float a[], int n)
+	{
+		int i;
+		float sum = 0;
+		
+		for(i=0;i<n;i++)
+		{
+			sum += a[i];
+		}
+		
+		return sum;
+	}
+
+//Sum of integer array elements
+
+float array_avg_int(int a[], int n)
+	{
+		int i,sum = 0;
+		
+		for(i=0;i<n;i++)
+		{
+			sum += a[i];
+		}
+		
+		return sum/n;
+	}
+	
+//Sum of float array elements
+
+float array_avg_float(float a[], int n)
+	{
+		int i;
+		float sum = 0;
+		
+		for(i=0;i<n;i++)
+		{
+			sum += a[i];
+		}
+		
+		return sum/n;
+	}	
