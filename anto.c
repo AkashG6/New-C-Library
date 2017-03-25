@@ -22,7 +22,7 @@ int main()
 	int i = (int) display_first(ilist);
 	char c = (char) display_last(ilist);
 	float f = (float) display_at(ilist,3);
-	printf("\n%d",i);
+	printf("%d",i);
 	printf("\n%c",c);
 	printf("\n%f",f);
 	
@@ -35,5 +35,24 @@ int main()
 	printf("\nflist:");
 	display_float(ilist);
 	
-	printf("\nilsit length:%d",count);
+	printf("\nilistt length:%d",count);
+	
+	struct vector* dlist = clone_vector(ilist);
+	printf("\ndlist:");
+	display_int(dlist);
+	printf("\ndlist:");
+	display_char(dlist);
+	printf("\ndlist:");
+	display_float(dlist);
+	
+	clear_vector(ilist);
+	printf("\nilist length:%d",vector_length(ilist));
+	
+	printf("\ndlist:");
+	display_int(dlist);
+	printf("\ndlist:");
+	display_char(dlist);
+	printf("\ndlist:");
+	display_float(dlist);
+	
 }

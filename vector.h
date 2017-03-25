@@ -318,3 +318,43 @@ int vector_length(struct vector* start)
 	
 	return(count);
 }
+
+void clear_vector(struct vector* start)
+{
+	struct vector* temp;
+	struct vector* track;
+	
+	temp=start->next;
+	start->next=NULL;
+	
+	while(temp!=NULL)
+	{
+		track=temp->next;
+		free(temp);
+		temp=track;
+	}
+}
+
+struct vector* clone_vector(struct vector* start)
+{
+	struct vector* temp = start->next;
+	struct vector* node = create_vector();
+	struct vector* ntemp = node;
+	struct vector* fnode = node;
+	
+	while(temp!=NULL)
+	{
+		struct vector* newnode = create_vector();
+		ntemp->next = newnode;
+		newnode->idata = temp->idata;
+		newnode->cdata = temp->cdata;
+		newnode->fdata = temp->fdata;
+		ntemp = ntemp->next;
+		temp = temp->next;
+	}
+	
+	ntemp->next = NULL;
+		
+	return(fnode);	
+}
+
