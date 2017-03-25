@@ -2,7 +2,17 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
+
+//Function to calculate a^b
+
+int power(int a, int b)
+{
+	if(b == 0)
+	return 1;
+	
+	else 
+	return a* power(a, b-1); 
+}
 
 //Function to find the decimal equivalent of a binary number
 
@@ -21,7 +31,7 @@ int bin_to_dec(int a[], int n)
 			exit(0);
 		}
 		
-		dec= dec+ a[i]*pow(2, n-1-i);
+		dec= dec+ a[i]*power(2, n-1-i);
 	}
 	
 	return dec; 
