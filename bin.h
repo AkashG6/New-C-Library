@@ -149,3 +149,136 @@ int * twos_complement(int a[], int arr[], int n)
 	return (a);
 }
 
+
+//Function to add two binary numbers
+int * bin_add(int a[], int n, int arr1[], int n1, int arr2[], int n2)
+{
+	//checking whether any of the array sizes are invalid
+	
+	if(n < n1 || n< n2 || n<= 0 || n1<= 0 || n2<= 0)
+	{
+		printf("Error: invalid array size passed to function bin_add()\n");
+		exit(0);
+	}
+	
+	int C= 0, s, i, j, k;
+	
+	for(j= 0; j< n; j++)
+	a[j]= 0;
+	
+	//j->  a[], i-> arr1[], k-> arr2[]
+	
+	for(j= n- 1, i= n1- 1, k= n2- 1; (i>= 0 && k>= 0); j--, i--, k--)
+	{
+		if(arr1[i] > 1 || arr1[i]< 0 || arr2[k]< 0 || arr2[k]> 1)
+		{
+			printf("Error: invalid binary number passed to function bin_add()\n"); //the function will throw an error if the binary number is invalid.
+			exit(0);
+		}
+		
+		s= arr1[i]+ arr2[k]+ C;
+		
+		if(s== 1 || s== 0)
+		{
+			a[j]= s;
+			C= 0;
+		}
+
+		else if(s == 2)
+		{
+			a[j]= 0;
+			C= 1;
+		}
+
+		else if(s == 3)
+		{
+			a[j]= 1;
+			C= 1;
+		}
+	}
+	
+	//Copying the elements remaining in arr1[] to a[]
+	while(i>= 0)
+	{
+		if(C == 1)
+		{
+			s= arr1[i]+ C;
+			
+			if(s == 1)
+			{
+				a[j]= 1;
+				C= 0;
+			}
+			
+			else 
+			a[j]= 0;
+		}
+		
+		else
+		a[j]= arr1[i];
+		
+		i--;
+		j--;
+	}
+	
+	//Copying the elements remaining in arr2[] to a[]
+	while(k>= 0)
+	{
+		if(C == 1)
+		{
+			s= arr2[k]+ C;
+			
+			if(s == 1)
+			{
+				a[j]= 1;
+				C= 0;
+			}
+			
+			else 
+			a[j]= 0;
+		}
+		
+		else
+		a[j]= arr2[k];
+		
+		k--;
+		j--;
+	}
+	
+	if(C == 1)
+	{
+		if(j == -1)
+		{
+			//if carry is 1 and there is no space left in th destination array, then the function throws an error
+			printf("Error: invalid array size passed to function bin_add()\n");
+			exit(0);
+		}
+		
+		else
+		{
+			while(C != 0 && j> -1)
+			{
+				
+				s= a[j]+ C;
+				if(s == 1)
+				{
+					a[j]= 1;
+					C= 0;
+				}
+				
+				else
+				{
+					a[j]= 0;
+					C= 1; 
+				}
+				
+				j--;
+				
+			}
+		}
+	}
+	
+	return(a);
+
+}
+
