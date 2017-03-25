@@ -172,4 +172,24 @@ float array_max_float(float a[], int n) {
              }                                                 
    }
    
-   
+   //Searching for an element in an array of integer values
+int array_search_int(int a[], int n, int find) {
+   int c;
+ 
+   for (c = 0 ;c < n ; c++ ) {
+      if (a[c] == find)
+         return c;
+   }
+    return -1;
+}
+
+//Searching for an element in an array of float values
+float array_search_float(float a[], int n, float find) {
+   int c;
+ 
+   for (c = 0 ;c < n ; c++ ) {
+      if (a[c] == find)
+         return c;
+   }
+    return -1;
+}
