@@ -90,14 +90,14 @@ void mul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
 }
 //================================================
 /*calculate Transpose*/
-void transpose_mat(int n,int (*mt)[n],int (*m)[n])
+void transpose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
 {
     int i,j;
-    for(i=0;i<n;i++)
+    for(i=0;i<m;i++)
      {
          for(j=0;j<n;j++)
          {
-           mt[i][j]=m[j][i];
+           mt[i][j]=mx[j][i];
          }
      }
 }
