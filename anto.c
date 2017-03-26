@@ -13,7 +13,7 @@ int main()
 	
 	insert_at(vname, 2, 77);
 	
-	
+	replace_at(vname, 2, 221);
 	
 	int first = (int) get_first(vname);
 	printf("\nFirst:%d",first);
@@ -70,8 +70,13 @@ int main()
     
 	display_int(new_vname);
     printf("\n");
+    
+    //printf("\nRemove last occurrence:%d", remove_last_occurr(new_vname, 88));
 	
 	printf("\nLast Index of:%d",last_index_of(new_vname, 88));
+	
+	printf("\n");
+	display_int(new_vname);
 	
 	printf("\nLenght new vname:%d",vector_length(new_vname));
 	

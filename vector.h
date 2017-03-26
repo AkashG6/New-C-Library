@@ -411,6 +411,33 @@ int last_index_of(struct vector* start, float data)
 }
 
 
+void replace_at(struct vector* start, int index, float data)
+{
+	int c = vector_length(start);
+	
+	int count=0;
+	
+	if(c<index-1 || c<0)
+	printf("\nError: Large/Invalid value of index passed to replace_at function\n");
+	
+	else
+	{
+		struct vector* temp;
+		temp=start->next;
+		
+		while(count!=index)
+		{
+			temp=temp->next;
+			count++;
+		}
+		
+		temp->idata = data;
+		temp->cdata = data;
+		temp->fdata = data;
+	}
+}
+
+
 void clear_vector(struct vector* start)
 {
 	struct vector* temp;
