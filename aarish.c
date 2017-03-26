@@ -80,7 +80,7 @@ int main()
 	printf("%d ", a[i]);*/
 	
 	/////////////////////////////////////////////Octa to dec
-	int n, i;
+	/*int n, i;
 	printf("Enter the size of the array: ");
 	scanf("%d",&n);
 	
@@ -92,5 +92,33 @@ int main()
 	
 	printf("Decimal: %d",dec);
 	
-	return 0;
+	return 0;*/
+	
+	///////////////////////////////////////////dec to octa
+	/*int n, i, dec;
+	printf("Enter the decimal number: ");
+	scanf("%d",&dec);
+	printf("Enter destination array size: ");
+	scanf("%d",&n);
+	int a[n];
+	a[n]= *dec_to_octa(a, n, dec);
+	
+	printf("Octa: ");
+	for(i= 0; i< n; i++)
+	printf("%d ",a[i]);*/
+	
+	/////////////////////////////////////////////hamming_7
+	int n, n1, i;
+	printf("Enter the number of data bits: ");
+	scanf("%d", &n1);
+	printf("Enter destination array size: ");
+	scanf("%d", &n);
+	int a[n], arr[n1];
+	for(i= 0; i< n1; i++)
+	scanf("%d",&arr[i]);
+	
+	a[n]= *hamming_12(a, n, arr, n1, 1);
+	
+	for(i= 0; i< n; i++)
+	printf("%d ", a[i]);
 }

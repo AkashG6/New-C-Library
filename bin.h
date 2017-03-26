@@ -301,7 +301,7 @@ int * hexa_to_bin(int a[],int n,char array[],int n1)
 }
 
 
-                                     //dec to hexa
+//dec to hexa
 char * dec_to_hexa(char a[], int n,int no)
 {
 	int temp[4*n],i;
@@ -318,11 +318,7 @@ char * dec_to_hexa(char a[], int n,int no)
 	return (a);
 }
 
-
-
-									// hexa to decimal
-
-
+// hexa to decimal
 int hexa_to_dec(char array[],int n1)
 {
 	int i,dec,temp[n1*4];
@@ -659,7 +655,7 @@ int * octa_to_bin(int a[], int n, int array[], int n1)
 }
 
 
-//function to return the binary equivalent of an octal number 
+//function to return the decimal equivalent of an octal number 
 int octa_to_dec(int a[], int n)
 {
 	
@@ -683,4 +679,128 @@ int octa_to_dec(int a[], int n)
 	}
 	
 	return dec; 
+}
+
+//function to return the octal equivalent of a decimal number
+int * dec_to_octa(int a[], int n, int dec)
+{	
+	if (dec<0)
+	{
+		printf("Error: cannot pass negative number to function dec_to_octa().\n");
+		exit(0);
+	}
+
+	if(n< 1)
+	{
+		printf("Error: invalid array size passed to function dec_to_octa()\n"); //the function will throw an error if the array size is invalid.
+		exit(0);
+	}
+	
+	int j;
+	
+	for(j= 0; j< n; j++)
+	a[j]= 0;
+	
+	j= n- 1;
+	
+	while(dec> 0)
+	{
+		if(j == -1)
+		{
+			printf("Error: insufficient destination array size passed to function dec_to_octa()\n");
+			exit(0);
+		}
+		
+		a[j]= dec%8;
+		dec= dec/8;
+		j--;
+	}
+	
+	return a;
+}
+
+
+//7 bit hamming code
+int * hamming_7(int a[], int n, int arr[], int n1, int parity)
+{
+	if(n != 7 || n1 != 4)
+	{
+		printf("Error: invalid array size passed to function hamming_7()\n"); //the function will throw an error if the array size is invalid.
+		exit(0);
+	}
+	
+	if(parity > 1 || parity < 0)
+	{
+		printf("Error: invalid parity bit passed to function hamming_7()\n"); //the function will throw an error if the parity bit is invalid.
+		exit(0);
+	}
+	
+	int i;
+	
+	for(i= 0; i< 4; i++)
+	{
+		if(arr[i]< 0 || arr[i]> 1)
+		{
+			printf("Error: invalid data bits passed to function hamming_7()\n");
+			exit(0);
+		}
+	}
+	
+	//D3= arr1[0], D5= arr1[1], D6= arr1[2], D7= arr[3]	
+	
+	a[0]= arr[0];
+	a[1]= arr[1];
+	a[2]= arr[2];
+	a[4]= arr[3];
+	
+	a[6]= arr[3]^arr[2]^arr[0]^parity;
+	a[5]= arr[3]^arr[1]^arr[0]^parity;
+	a[3]= arr[2]^arr[1]^arr[0]^parity;
+	
+	return a;
+}
+
+//12 b =it hamming code
+int * hamming_12(int a[], int n, int arr[], int n1, int parity)
+{
+	if(n != 12 || n1 != 8)
+	{
+		printf("Error: invalid array size passed to function hamming_12()\n"); //the function will throw an error if the array size is invalid.
+		exit(0);
+	}
+	
+	if(parity > 1 || parity < 0)
+	{
+		printf("Error: invalid parity bit passed to function hamming_12()\n"); //the function will throw an error if the parity bit is invalid.
+		exit(0);
+	}
+	
+	int i;
+	
+	for(i= 0; i< 8; i++)
+	{
+		if(arr[i]< 0 || arr[i]> 1)
+		{
+			printf("Error: invalid data bits passed to function hamming_12()\n");
+			exit(0);
+		}
+	}
+	
+	//D3= arr1[0], D5= arr1[1], D6= arr1[2], D7= arr[3]	
+	
+	a[0]= arr[0];
+	a[1]= arr[1];
+	a[2]= arr[2];
+	a[3]= arr[3];
+	a[5]= arr[4];
+	a[6]= arr[5];
+	a[7]= arr[6];
+	a[9]= arr[7];
+	
+	a[11]= arr[7]^arr[6]^arr[4]^arr[3]^arr[1]^parity;
+	a[10]= arr[7]^arr[5]^arr[4]^arr[2]^arr[1]^parity;
+	a[8]= arr[6]^arr[5]^arr[4]^arr[0]^parity;
+	a[4]= arr[3]^arr[2]^arr[1]^arr[0]^parity;
+	
+	return a;
 }
