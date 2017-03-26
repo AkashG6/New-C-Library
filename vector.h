@@ -384,6 +384,34 @@ int index_of(struct vector* start, float data)
 }
 
 
+int remove_first_occurr(struct vector* start, float data)
+{
+	struct vector* temp = start->next;
+	int flag = 0;
+	int c=0;
+	
+	while(temp!=NULL)
+	{
+		if(temp->cdata == data || temp->fdata == data || temp->idata == data)
+		{
+			flag=1;
+			break;
+		}
+		
+		c++;
+		temp = temp->next;
+	}
+	
+	delete_at(start, c);
+	
+	if(flag==1)
+	return(c);
+	
+	else
+	return(-1);
+}
+
+
 int last_index_of(struct vector* start, float data)
 {
 	struct vector* temp = start->next;

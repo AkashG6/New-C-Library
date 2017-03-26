@@ -28,7 +28,7 @@ int main()
     
 	printf("\nLenght before:%d",vector_length(vname));
     
-    printf("\nContains:%d",contains(vname, 88));
+    printf("\nContains:%d",contains(vname, 88.000));
     
     printf("\nIndex of:%d",index_of(vname, 77));
     
@@ -71,7 +71,8 @@ int main()
 	display_int(new_vname);
     printf("\n");
     
-    //printf("\nRemove last occurrence:%d", remove_last_occurr(new_vname, 88));
+    printf("\nRemove first occurrence:%d", remove_first_occurr(new_vname, 88));
+    printf("\nRemove last occurrence:%d", remove_last_occurr(new_vname, 88));
 	
 	printf("\nLast Index of:%d",last_index_of(new_vname, 88));
 	
