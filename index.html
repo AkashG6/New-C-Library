@@ -27,50 +27,72 @@
   			<a href="#dec_to_bin">dec_to_bin</a>
 	  		</div>
 	  		<div class="col-md-6">
-	  			that
+	  			<a href="#bin_to_dec">bin_to_dec</a>
 	  		</div>
   		</div>
   		<div class="row">
   			<div class="col-md-6">
-  			this
+        <a href="#ones_complement">ones_complement</a>
 	  		</div>
 	  		<div class="col-md-6">
-	  			that
+        <a href="#twos_complement">twos_complement</a>
 	  		</div>
   		</div>
   		<div class="row">
   			<div class="col-md-6">
-  			this
+        <a href="#bin_add">bin_add</a>
 	  		</div>
 	  		<div class="col-md-6">
-	  			that
+        <a href="#bin_diff">bin_diff</a>
 	  		</div>
   		</div>
   		<div class="row">
   			<div class="col-md-6">
-  			this
+  			<a href="#bin_mult">bin_mult</a>
 	  		</div>
 	  		<div class="col-md-6">
-	  			that
+        <a href="#bin_to_octa">bin_to_octa</a>
+        </div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-6">
+        <a href="#octa_to_bin">octa_to_bin</a>
+	  		</div>
+	  		<div class="col-md-6">
+	  			<a href="#bin_to_hexa">bin_to_hexa</a>
 	  		</div>
   		</div>
   		<div class="row">
   			<div class="col-md-6">
-  			this
+  			<a href="#hexa_to_bin">hexa_to_bin</a>
 	  		</div>
 	  		<div class="col-md-6">
-	  			that
+	  			<a href="#dec_to_octa">dec_to_octa</a>
 	  		</div>
   		</div>
-  		<div class="row">
-  			<div class="col-md-6">
-  			this
-	  		</div>
-	  		<div class="col-md-6">
-	  			that
-	  		</div>
-  		</div>	
-  	  </div>
+      <div class="row">
+        <div class="col-md-6">
+        <a href="#octa_to_dec">octa_to_dec</a>
+        </div>
+
+
+        <div class="col-md-6">
+          <a href="#hexa_to_bin">hexa_to_bin</a>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-md-6">
+        <a href="#hexa_to_bin">hexa_to_bin</a>
+        </div>
+        <div class="col-md-6">
+          <a href="#hexa_to_bin">hexa_to_bin</a>
+        </div>
+      </div>  	
+  	 </div>
+
+
+
+
 	  <div class="col-md-4">
 	  	<h3><a href="#arrays.h">arrays.h</a></h3>
 	  	<div class="row">
@@ -122,6 +144,11 @@
 	  		</div>
   		</div>
 	  </div>
+
+
+
+
+
 	  <div class="col-md-4">
 	  	<h3><a href="#vectors.h">vectors.h</a></h3>
 	  	<div class="row">
@@ -186,54 +213,265 @@
   <div class="panel panel-primary" id="dec_to_bin">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
+        <a data-toggle="collapse" href="#collapse1" style="text-decoration:none"><b>dec_to_bin</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;
+        Converts decimal number to binary</a>
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-body"><b>Parameters:</b> (int destination_array, int array_size,int decimal_number)<br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b> Returns the binary equivalent for the decimal number passed to the function.<br>
+                              <b>Example:</b> a[n]= dec_to_bin(a, n, dec);
+                              </div>
+      <div class="panel-footer"><b>Restrictions:</b> Cannot pass negative numbers to function.</div>
     </div>
   </div>
 </div>
 <div class="panel-group">
-  <div class="panel panel-info">
+  <div class="panel panel-info" id="bin_to_dec">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse2">Collapsible panel</a>
+        <a data-toggle="collapse" href="#collapse2" style="text-decoration:none"><b>bin_to_dec</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;
+        Converts decimal nunmber to binary</a>
       </h4>
     </div>
     <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-body"><b>Parameters:</b> (int source_array, array_size)<br> 
+                              <b>Return type:</b> int<br>
+                              <b>Function description:</b>  Returns the decimal equivalent for the binary number referenced by the array name passed to the function.<br>
+                              <b>Example:</b> int dec= bin_to_dec(arr, n);
+                              </div>
     </div>
   </div>
 </div>
 <div class="panel-group">
-  <div class="panel panel-primary">
+  <div class="panel panel-primary" id="ones_complement">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse3">Collapsible panel</a>
+        <a data-toggle="collapse" href="#collapse3" style="text-decoration:none"><b>ones_complement</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&nbsp;&nbsp; 
+        Gives one's complement of a binary number</a>
       </h4>
     </div>
     <div id="collapse3" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-body"><b>Parameters:</b> (int destination_array, int source_array,int array_size)<br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b> Calculates one’s complement of the binary number passed as the source array and stores it in the passed destination array. The contents of the source array remain intact.<br>
+                              <b>Example:</b> a[n] = *ones_complement(a,array,n);
+                              </div>  
     </div>
   </div>
 </div>
 <div class="panel-group">
-  <div class="panel panel-info">
+  <div class="panel panel-info" id="twos_complement">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse4">Collapsible panel</a>
+        <a data-toggle="collapse" href="#collapse4" style="text-decoration:none"><b>twos_complement</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&nbsp;&nbsp;
+        Gives two's complement of a binary number</a>
       </h4>
     </div>
     <div id="collapse4" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-body"><b>Parameters:</b> (int destination_array,int source_array,int array_size)<br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>   Calculates two’s complement of the binary number passed as the source array and stores it in the passed destination array. The contents of the source array remain intact. <br>
+                              <b>Example:</b> a[n] = *twos_complement(a,array,n);
+                              </div>
     </div>
   </div>
 </div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="bin_add">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse5" style="text-decoration:none"><b>bin_add</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Adds two binary numbers</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array,int destination_array_size, int source_array1, int source_array1_size,int source_array2, int source_array2_size) <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b> Calculates the sum of the two binary numbers passed as source arrays and stores this sum in the passed destination array. The contents of the source arrays remain intact.<br>
+                              <b>Example:</b> a[n] = *bin_add(a, n, arr1, n1, arr2, n2);                                
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b> Can pass only unsigned numbers to function.</div>
+
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info" id="bin_diff">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse6" style="text-decoration:none"><b>bin_diff</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Gives the differece between two binary numbers</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array,int destination_array_size, int source_array1, int source_array1_size,int source_array2, int source_array2_size)<br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>   Calculates the difference of the two binary numbers passed as arrays and stores this difference in the passed destination array. The function calculates the greater of the two binary numbers and then calculates the difference. This is done in order to negate the use of any one’s or two’s complement representations of the difference. The contents of the source arrays remain intact. <br>
+                              <b>Example:</b> a[n] = *bin_diff(a, n, arr1, n1, arr2, n2);
+                              </div>
+        <div class="panel-footer"><b>Restrictions:</b> Can pass only unsigned numbers to function.</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="bin_mult">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse7" style="text-decoration:none"><b>bin_mult</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        Gives multiplication of two binary numbers</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array,int destination_array_size, int source_array1, int source_array1_size,int source_array2, int source_array2_size) <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b> Calculates the product of the two binary numbers passed as arrays and stores this product in the passed destination array. The contents of the source arrays remain intact.<br>
+                              <b>Example:</b>  a[n] = *bin_mult(a, n, arr1, n1, arr2, n2);                                
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b> Can pass only unsigned numbers to function, the size of the destination array must be at least equal to (n1+n2).</div>
+
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info" id="bin_to_octa">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse8" style="text-decoration:none"><b>bin_to_octa</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Converts binary number to octal</a>
+      </h4>
+    </div>
+    <div id="collapse8" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array,int destination_array_size, int source_array, int source_array_size) <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>   Converts binary number passed as source array to its equivalent octal number and stores it in the destination array.  <br>
+                              <b>Example:</b> a[n] = *bin_to_octa(a, n, array, n1);
+                              </div>
+        <div class="panel-footer"><b>Restrictions:</b>  size of source array (n1) should be an integral multiple of 3 and size of destination array (n) should be at least (n1)/3.</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="octa_to_bin">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse9" style="text-decoration:none"><b>octa_to_bin</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Gives multiplication of two binary numbers</a>
+      </h4>
+    </div>
+    <div id="collapse9" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array ,int destination_array_size, int source_array, int source_array_size)  <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>  Converts octal number passed as source array to its binary equivalent and stores it in the destination array<br>
+                              <b>Example:</b>  a[n] = *octa_to_bin(a,n,array,n1);                                
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b>  size of destination array should be at least 3 times the size of source array.</div>
+
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info" id="bin_to_hexa">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse10" style="text-decoration:none"><b>bin_to_hexa</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Converts binary number to hexadecimal</a>
+      </h4>
+    </div>
+    <div id="collapse10" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b>  (char destination_array,int destination_array_size, int source_array, int source_array_size)  <br> 
+                              <b>Return type:</b>char array<br>
+                              <b>Function description:</b>   Converts binary number passed as source array to its equivalent hexadecimal no. and stores it in the destination array. <br>
+                              <b>Example:</b> a[n] = *bin_to_hexa(a,n,array,n1);
+                              </div>
+        <div class="panel-footer"><b>Restrictions:</b>  size of source array (n1) should be an integral multiple of 4 and size of destination array (n) should be at least (n1)/4.</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="hexa_to_bin">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse11" style="text-decoration:none"><b>hexa_to_bin</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Converts hexadecimal number to binary</a>
+      </h4>
+    </div>
+    <div id="collapse11" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array ,int destination_array_size, int source_array, int source_array_size)  <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>  Converts hexadecimal number passed as source array to its binary equivalent and stores it in the destination array.<br>
+                              <b>Example:</b>  a[n] = *hexa_to_bin(a,n,array,n1);                            
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b>  size of destination array should be at least 4 times the size of source array.</div>
+
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info" id="dec_to_octa">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse12" style="text-decoration:none"><b>dec_to_octa</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Converts decimal number to octal</a>
+      </h4>
+    </div>
+    <div id="collapse12" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b>  (char destination_array,int destination_array_size, int source_array, int source_array_size)  <br> 
+                              <b>Return type:</b>char array<br>
+                              <b>Function description:</b>   Converts binary number passed as source array to its equivalent hexadecimal no. and stores it in the destination array. <br>
+                              <b>Example:</b> a[n] = *bin_to_hexa(a,n,array,n1);
+                              </div>
+        <div class="panel-footer"><b>Restrictions:</b>  size of source array (n1) should be an integral multiple of 4 and size of destination array (n) should be at least (n1)/4.</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="octa_to_dec">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse13" style="text-decoration:none"><b>octa_to_dec</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        Converts octal number to decimal</a>
+      </h4>
+    </div>
+    <div id="collapse13" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b> (int destination_array ,int destination_array_size, int source_array, int source_array_size)  <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>  Converts hexadecimal number passed as source array to its binary equivalent and stores it in the destination array.<br>
+                              <b>Example:</b>  a[n] = *hexa_to_bin(a,n,array,n1);                            
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b>  size of destination array should be at least 4 times the size of source array.</div>
+
+    </div>
+  </div>
+</div>
+
 
   <br>
   <br>
@@ -376,19 +614,13 @@
   <br>
   <br>
 
-  <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
-  <div id="demo" class="collapse">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
 
 </div>
 
 <div >
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow79.js"></script>
-	<noscript>Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top Button</a></noscript>
+	<noscript><a href="http://www.scrolltotop.com/">Scroll to Top Button</a></noscript>
 </div>
 
 </body>
