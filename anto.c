@@ -28,7 +28,11 @@ int main()
     
 	printf("\nLenght before:%d",vector_length(vname));
     
+    printf("\nContains:%d",contains(vname, 88));
     
+    printf("\nIndex of:%d",index_of(vname, 77));
+    
+    printf("\nIndex of:%d",index_of(vname, 98));
     
     struct vector* new_vname = clone_vector(vname);
     
@@ -38,13 +42,13 @@ int main()
     delete_last(vname);
     
 	delete_at(vname, 1);
-    
-    
+
 	
 	printf("\nVname After:");
     display_int(vname);
     
 	printf("\nLenght after:%d",vector_length(vname));
+	printf("\nContains:%d",contains(vname, 55));
     
     printf("\nNew Vname:");
     printf("\n");
@@ -56,7 +60,18 @@ int main()
     printf("\n");
     
 	display_float(new_vname);
+	
+	insert_last(new_vname, 88);
+	insert_last(new_vname, 88);
+	insert_last(new_vname, 98);
+	insert_last(new_vname, 90);
+	
+	printf("\n");
     
+	display_int(new_vname);
+    printf("\n");
+	
+	printf("\nLast Index of:%d",last_index_of(new_vname, 88));
 	
 	printf("\nLenght new vname:%d",vector_length(new_vname));
 	
