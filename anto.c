@@ -28,7 +28,7 @@ int main()
     
 	printf("\nLenght before:%d",vector_length(vname));
     
-    
+    printf("\nContains:%d",contains(vname, 88));
     
     struct vector* new_vname = clone_vector(vname);
     
@@ -38,13 +38,13 @@ int main()
     delete_last(vname);
     
 	delete_at(vname, 1);
-    
-    
+
 	
 	printf("\nVname After:");
     display_int(vname);
     
 	printf("\nLenght after:%d",vector_length(vname));
+	printf("\nContains:%d",contains(vname, 55));
     
     printf("\nNew Vname:");
     printf("\n");
