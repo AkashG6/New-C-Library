@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include"bin.h"
-
+#include<time.h>
 int main()
 {
 	/*
@@ -58,7 +58,7 @@ int main()
 	printf("%d ",a[i]);*/
 	
 	///////////////////////////////////////////Octal to bin and bin to octal
-	/*int n, n1;
+	int n, n1;
 	
 	printf("Enter the size of the source array: ");
 	scanf("%d",&n1);
@@ -72,13 +72,19 @@ int main()
 	for(i= 0; i< n1; i++)
 	scanf("%d", &arr[i]);
 	
+	clock_t start, end;
+	double cpu_time_used;
+	start = clock();
 	a[n]= *	octa_to_bin(a, n, arr, n1);
-	
+	end = clock();	
 	printf("Bin: ");
 	
 	for(i= 0; i< n; i++)
-	printf("%d ", a[i]);*/
+	printf("%d ", a[i]);
 	
+	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	
+	printf("CPU time used: %f \n",cpu_time_used);
 	/////////////////////////////////////////////Octa to dec
 	/*int n, i;
 	printf("Enter the size of the array: ");
@@ -95,20 +101,27 @@ int main()
 	return 0;*/
 	
 	///////////////////////////////////////////dec to octa
+
 	/*int n, i, dec;
 	printf("Enter the decimal number: ");
 	scanf("%d",&dec);
 	printf("Enter destination array size: ");
 	scanf("%d",&n);
 	int a[n];
+	clock_t start, end;
+	double cpu_time_used;
+	start = clock();
 	a[n]= *dec_to_octa(a, n, dec);
-	
+	end = clock();
 	printf("Octa: ");
 	for(i= 0; i< n; i++)
-	printf("%d ",a[i]);*/
+	printf("%d ",a[i]);
 	
+	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	
+	printf("CPU time used: %f \n",cpu_time_used);
 	/////////////////////////////////////////////hamming_7
-	int n, n1, i;
+	/*int n, n1, i;
 	printf("Enter the number of data bits: ");
 	scanf("%d", &n1);
 	printf("Enter destination array size: ");
@@ -120,5 +133,5 @@ int main()
 	a[n]= *hamming_12(a, n, arr, n1, 1);
 	
 	for(i= 0; i< n; i++)
-	printf("%d ", a[i]);
+	printf("%d ", a[i]);*/
 }
