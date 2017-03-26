@@ -9,60 +9,60 @@ int main(void)
   scanf("%d%d",&p,&q );
 
   int a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q],tr[n][m],in[m][n];
-  Iread_mat(m,n,a);
+  int_read_mat(m,n,a);
   printf("\nMatrix A:\n");
-  Iprt_mat(m,n,a);
-  Iread_mat(p,q,b);
+  int_prt_mat(m,n,a);
+  int_read_mat(p,q,b);
   printf("\nMatrix B:\n");
-  Iprt_mat(p,q,b);
-  Iadd_mat(m,n,p,q,add,a,b);
+  int_prt_mat(p,q,b);
+  int_add_mat(m,n,p,q,add,a,b);
   printf("\nAdded Matrix:\n");
-  Iprt_mat(m,n,add);
+  int_prt_mat(m,n,add);
 
-  Isub_mat(m,n,p,q,sub,a,b);
+  int_sub_mat(m,n,p,q,sub,a,b);
   printf("\nSubtracted Matrix:\n");
-  Iprt_mat(m,n,sub);
+  int_prt_mat(m,n,sub);
 
-  Imul_mat(m,n,p,q,mul,a,b);
+  int_mul_mat(m,n,p,q,mul,a,b);
   printf("\nMultiplied Matrix:\n");
-  Iprt_mat(m,q,mul);
+  int_prt_mat(m,q,mul);
 
-  Itranspose_mat(m,n,tr,a);
+  int_transpose_mat(m,n,tr,a);
   printf("\nTranspose of Matrix A:\n");
-  Iprt_mat(n,m,tr);
+  int_prt_mat(n,m,tr);
 
-  Iinverse_mat(m,n,in,a);
+  int_inverse_mat(m,n,in,a);
   printf("\nInverse of Matrix A:\n");
-  Iprt_mat(m,n,in);
+  int_prt_mat(m,n,in);
 
-  
+
   /*
   float a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q],tr[n][m],in[m][n];
-  Fread_mat(m,n,a);
+  float_read_mat(m,n,a);
   printf("\nMatrix A:\n");
-  Fprt_mat(m,n,a);
-  Fread_mat(p,q,b);
+  float_prt_mat(m,n,a);
+  float_read_mat(p,q,b);
   printf("\nMatrix B:\n");
-  Fprt_mat(p,q,b);
-  Fadd_mat(m,n,p,q,add,a,b);
+  float_prt_mat(p,q,b);
+  float_add_mat(m,n,p,q,add,a,b);
   printf("\nAdded Matrix:\n");
-  Fprt_mat(m,n,add);
+  float_prt_mat(m,n,add);
 
-  Fsub_mat(m,n,p,q,sub,a,b);
+  float_sub_mat(m,n,p,q,sub,a,b);
   printf("\nSubtracted Matrix:\n");
-  Fprt_mat(m,n,sub);
+  float_prt_mat(m,n,sub);
 
-  Fmul_mat(m,n,p,q,mul,a,b);
+  float_mul_mat(m,n,p,q,mul,a,b);
   printf("\nMultiplied Matrix:\n");
-  Fprt_mat(m,q,mul);
+  float_prt_mat(m,q,mul);
 
-  Ftranspose_mat(m,n,tr,a);
+  float_transpose_mat(m,n,tr,a);
   printf("\nTranspose of Matrix A:\n");
-  Fprt_mat(n,m,tr);
+  float_prt_mat(n,m,tr);
 
-  Finverse_mat(m,n,in,a);
+  float_inverse_mat(m,n,in,a);
   printf("\nInverse of Matrix A:\n");
-  Fprt_mat(m,n,in);
+  float_prt_mat(m,n,in);
 
   */
   return 0;

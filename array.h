@@ -3,7 +3,7 @@
 #include<stdlib.h>
 //===================================
 /*Taking Input From the User */
-void Fread_mat(int m,int n,float (*a)[n])
+void float_read_mat(int m,int n,float (*a)[n])
 {
     int i,j;
     for(i=0;i<m;i++)
@@ -15,7 +15,7 @@ void Fread_mat(int m,int n,float (*a)[n])
       }
     }
 }
-void Iread_mat(int m,int n,int (*a)[n])
+void int_read_mat(int m,int n,int (*a)[n])
 {
     int i,j;
     for(i=0;i<m;i++)
@@ -28,7 +28,7 @@ void Iread_mat(int m,int n,int (*a)[n])
     }
 }
 //===============================
-void Iprt_mat(int m,int n,int (*mat)[n])
+void int_prt_mat(int m,int n,int (*mat)[n])
 {
   int i,j;
   for(i=0;i<m;i++)
@@ -40,7 +40,7 @@ void Iprt_mat(int m,int n,int (*mat)[n])
     printf("\n");
   }
 }
-void Fprt_mat(int m,int n,float (*mat)[n])
+void float_prt_mat(int m,int n,float (*mat)[n])
 {
   int i,j;
   for(i=0;i<m;i++)
@@ -53,7 +53,7 @@ void Fprt_mat(int m,int n,float (*mat)[n])
   }
 }
 //==========================================================================
-void Iadd_mat(int m,int n,int p,int q,int (*add)[n],int (*a)[n],int (*b)[q])
+void int_add_mat(int m,int n,int p,int q,int (*add)[n],int (*a)[n],int (*b)[q])
 {
   int i,j;
   if(p==m && q==n)
@@ -72,7 +72,7 @@ void Iadd_mat(int m,int n,int p,int q,int (*add)[n],int (*a)[n],int (*b)[q])
     exit(0);
   }
 }
-void Fadd_mat(int m,int n,int p,int q,float (*add)[n],float (*a)[n],float (*b)[q])
+void float_add_mat(int m,int n,int p,int q,float (*add)[n],float (*a)[n],float (*b)[q])
 {
   int i,j;
   if(p==m && q==n)
@@ -93,7 +93,7 @@ void Fadd_mat(int m,int n,int p,int q,float (*add)[n],float (*a)[n],float (*b)[q
 }
 
 //========================================================================
-void Isub_mat(int m,int n,int p,int q,int (*sub)[n],int (*a)[n],int (*b)[q])
+void int_sub_mat(int m,int n,int p,int q,int (*sub)[n],int (*a)[n],int (*b)[q])
 {
   int i,j;
   if(p==m && q==n)
@@ -112,7 +112,7 @@ void Isub_mat(int m,int n,int p,int q,int (*sub)[n],int (*a)[n],int (*b)[q])
     exit(0);
   }
 }
-void Fsub_mat(int m,int n,int p,int q,float (*sub)[n],float (*a)[n],float (*b)[q])
+void float_sub_mat(int m,int n,int p,int q,float (*sub)[n],float (*a)[n],float (*b)[q])
 {
   int i,j;
   if(p==m && q==n)
@@ -134,7 +134,7 @@ void Fsub_mat(int m,int n,int p,int q,float (*sub)[n],float (*a)[n],float (*b)[q
 
 //========================================================================
 /*Matrix MULTIPLICATION */
-void Imul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
+void int_mul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
 {
     int i,j,k;
     if(n==p)
@@ -163,7 +163,7 @@ void Imul_mat(int m,int n,int p,int q,int (*mul)[q],int (*a)[n],int (*b)[q])
       exit(0);
     }
 }
-void Fmul_mat(int m,int n,int p,int q,float (*mul)[q],float (*a)[n],float (*b)[q])
+void float_mul_mat(int m,int n,int p,int q,float (*mul)[q],float (*a)[n],float (*b)[q])
 {
     int i,j,k;
     if(n==p)
@@ -194,7 +194,7 @@ void Fmul_mat(int m,int n,int p,int q,float (*mul)[q],float (*a)[n],float (*b)[q
 }
 //================================================
 /*calculate Transpose*/
-void Itranspose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
+void int_transpose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
 {
     int i,j;
     for(i=0;i<m;i++)
@@ -205,7 +205,7 @@ void Itranspose_mat(int m,int n,int (*mt)[n],int (*mx)[n])
          }
      }
 }
-void Ftranspose_mat(int m,int n,float (*mt)[n],float (*mx)[n])
+void float_transpose_mat(int m,int n,float (*mt)[n],float (*mx)[n])
 {
     int i,j;
     for(i=0;i<m;i++)
@@ -218,7 +218,7 @@ void Ftranspose_mat(int m,int n,float (*mt)[n],float (*mx)[n])
 }
 //=================================================
 /*For calculating Determinant of the Matrix */
-float Fdeterminant_mat(int k,int l,float (*a)[l])
+float float_determinant_mat(int k,int l,float (*a)[l])
 {
   if(k==l)
   {
@@ -265,7 +265,7 @@ float Fdeterminant_mat(int k,int l,float (*a)[l])
       exit(0);
     }
 }
-int Ideterminant_mat(int k,int l,int (*a)[l])
+int int_determinant_mat(int k,int l,int (*a)[l])
 {
   if(k==l)
   {
@@ -324,7 +324,7 @@ float powerup(int e,int q)
   }
   return re;
 }
-void Fcofactor_mat(int f,int g,float (*fac)[f],float (*num)[f])
+void float_cofactor_mat(int f,int g,float (*fac)[f],float (*num)[f])
 {
   if(f==g)
   {
@@ -363,7 +363,7 @@ void Fcofactor_mat(int f,int g,float (*fac)[f],float (*num)[f])
       exit(0);
     }
 }
-void Icofactor_mat(int f,int g,int (*fac)[f],int (*num)[f])
+void int_cofactor_mat(int f,int g,int (*fac)[f],int (*num)[f])
 {
   if(f==g)
   {
@@ -405,7 +405,7 @@ void Icofactor_mat(int f,int g,int (*fac)[f],int (*num)[f])
 
 //===============================================
 /* Inverse of MATRIX*/
-void Iinverse_mat(int m,int n,int (*inverse)[n],int (*mat)[n])
+void int_inverse_mat(int m,int n,int (*inverse)[n],int (*mat)[n])
 {
   if(m==n)
   {
@@ -428,7 +428,7 @@ void Iinverse_mat(int m,int n,int (*inverse)[n],int (*mat)[n])
     exit(0);
   }
 }
-void Finverse_mat(int m,int n,float (*inverse)[n],float (*mat)[n])
+void float_inverse_mat(int m,int n,float (*inverse)[n],float (*mat)[n])
 {
   if(m==n)
   {
@@ -452,12 +452,8 @@ void Finverse_mat(int m,int n,float (*inverse)[n],float (*mat)[n])
   }
 }
 //================================================
-//Header file for array related operations (one dimensional arrays(lists) and two dimensional arrays(matrices))
-#include<stdio.h>
-#include<stdlib.h>
-
 //Finding minimum element in an array of integer values
-int array_min_int(int a[], int n) 
+int array_min_int(int a[], int n)
   {
   	int c, min, index;
 	if(n<0)
@@ -621,7 +617,7 @@ int array_search_int(int a[], int n, int find) {
 	{
 		printf("Error: invalid array size, array size cannot be negative");
 	}
-	
+
    for (c = 0 ;c < n ; c++ ) {
       if (a[c] == find)
          return c;
@@ -632,7 +628,7 @@ int array_search_int(int a[], int n, int find) {
 //Searching for an element in an array of float values
 float array_search_float(float a[], int n, float find) {
    int c;
-	
+
 	if(n<0)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
@@ -646,7 +642,7 @@ float array_search_float(float a[], int n, float find) {
 
 char array_search_char(char a[], int n, char find) {
    int c;
-   
+
 	if(n<0)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
@@ -727,7 +723,7 @@ float array_avg_float(float a[], int n)
 
     return sum/n;
   }
-  
+
 void array_reverse_int(int a[], int n)
   {
 	int i, end;
@@ -738,16 +734,16 @@ void array_reverse_int(int a[], int n)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
 	}
-  	for (i = 0; i < n/2; i++) 
+  	for (i = 0; i < n/2; i++)
 	{
 	//swapping elements
     t = a[i];
     a[i] = a[end];
     a[end] = t;
     end--;
-  	}  	
+  	}
   }
-  
+
 void array_reverse_float(float a[], int n)
   {
 	int i, end;
@@ -758,16 +754,16 @@ void array_reverse_float(float a[], int n)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
 	}
-	for (i = 0; i < n/2; i++) 
+	for (i = 0; i < n/2; i++)
 	{
 	//swapping elements
     t = a[i];
     a[i] = a[end];
     a[end] = t;
     end--;
-  	}  	
+  	}
   }
-  
+
 void array_reverse_char(char a[], int n)
   {
 	int i, end;
@@ -778,17 +774,17 @@ void array_reverse_char(char a[], int n)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
 	}
-	for (i = 0; i < n/2; i++) 
+	for (i = 0; i < n/2; i++)
 	{
 	//swapping elements
     t = a[i];
     a[i] = a[end];
     a[end] = t;
     end--;
-  	}  	
+  	}
   }
 
-  
+
   int * array_merge_int(int a[], int n1, int b[], int n2, int c[], int x)
   {
 	int i=0, j=0, k=0;
@@ -797,24 +793,24 @@ void array_reverse_char(char a[], int n)
 		printf("Error: size of destination array should be sum of the two source arrays\n");
 		exit(0);
 	}
-	
+
 	while(i<n1)
 	{
 		c[k] = a[i];
 		k++;
 		i++;
 	}
-	
+
 	while(j<n2)
 	{
 		c[k] = b[j];
 		k++;
 		j++;
 	}
-	
+
 	return c;
   }
-  
+
 float * array_merge_float(float a[], int n1, float b[], int n2, float c[], int x)
   {
 	int i=0, j=0, k=0;
@@ -823,24 +819,24 @@ float * array_merge_float(float a[], int n1, float b[], int n2, float c[], int x
 		printf("Error: size of destination array should be sum of the two source arrays\n");
 		exit(0);
 	}
-	
+
 	while(i<n1)
 	{
 		c[k] = a[i];
 		k++;
 		i++;
 	}
-	
+
 	while(j<n2)
 	{
 		c[k] = b[j];
 		k++;
 		j++;
 	}
-	
+
 	return c;
-  }  
-  
+  }
+
 char * array_merge_char(char a[], int n1, char b[], int n2, char c[], int x)
   {
 	int i=0, j=0, k=0;
@@ -849,25 +845,25 @@ char * array_merge_char(char a[], int n1, char b[], int n2, char c[], int x)
 		printf("Error: size of destination array should be sum of the two source arrays\n");
 		exit(0);
 	}
-	
+
 	while(i<n1)
 	{
 		c[k] = a[i];
 		k++;
 		i++;
 	}
-	
+
 	while(j<n2)
 	{
 		c[k] = b[j];
 		k++;
 		j++;
 	}
-	
+
 	return c;
-  }  
-  
-  
+  }
+
+
 void array_shift_left_int(int a[], int n)
   {
 	int i;
@@ -880,9 +876,9 @@ void array_shift_left_int(int a[], int n)
 		a[i] = a[i+1];
 		//shift left
 	}
-	a[n-1] = 0;	
-  } 
-  
+	a[n-1] = 0;
+  }
+
 void array_shift_right_int(int a[], int n)
   {
 	int i;
@@ -895,9 +891,9 @@ void array_shift_right_int(int a[], int n)
 		a[i] = a[i-1];
 		//shift right
 	}
-	a[0] = 0;	
-  }	
-    
+	a[0] = 0;
+  }
+
 void array_shift_left_float(float a[], int n)
   {
 	int i;
@@ -910,9 +906,9 @@ void array_shift_left_float(float a[], int n)
 		a[i] = a[i+1];
 		//shift left
 	}
-	a[n-1] = 0;	
-  } 
-  
+	a[n-1] = 0;
+  }
+
 void array_shift_right_float(float a[], int n)
   {
 	int i;
@@ -925,9 +921,9 @@ void array_shift_right_float(float a[], int n)
 		a[i] = a[i-1];
 		//shift right
 	}
-	a[0] = 0;	
-  } 
-  
+	a[0] = 0;
+  }
+
 void array_shift_left_char(char a[], int n)
   {
 	int i;
@@ -940,9 +936,9 @@ void array_shift_left_char(char a[], int n)
 		a[i] = a[i+1];
 		//shift left
 	}
-	a[n-1] = 0;	
-  } 
-  
+	a[n-1] = 0;
+  }
+
 void array_shift_right_char(char a[], int n)
   {
 	int i;
@@ -955,9 +951,9 @@ void array_shift_right_char(char a[], int n)
 		a[i] = a[i-1];
 		//shift right
 	}
-	a[0] = 0;	
-  }     
-  
+	a[0] = 0;
+  }
+
 void array_rotate_left_int(int a[], int n)
   {
 	int i;
@@ -965,16 +961,16 @@ void array_rotate_left_int(int a[], int n)
 	if(n<0)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
-	}	
+	}
 	for(i=0;i<n;i++)
 	{
 		a[i] = a[i-1];
 		//shift left
 	}
 	a[n-1] = temp;
-		
+
   }
-  
+
 void array_rotate_left_float(float a[], int n)
   {
 	int i;
@@ -982,16 +978,16 @@ void array_rotate_left_float(float a[], int n)
 	if(n<0)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
-	}	
+	}
 	for(i=0;i<n;i++)
 	{
 		a[i] = a[i+1];
 		//shift left
 	}
 	a[n-1] = temp;
-		
-  }  
-  
+
+  }
+
 void array_rotate_left_char(char a[], int n)
   {
 	int i;
@@ -999,16 +995,16 @@ void array_rotate_left_char(char a[], int n)
 	if(n<0)
 	{
 		printf("Error: invalid array size, array size cannot be negative");
-	}	
+	}
 	for(i=0;i<n;i++)
 	{
 		a[i] = a[i+1];
 		//shift left
 	}
 	a[n-1] = temp;
-		
-  }  
-  
+
+  }
+
 void array_rotate_right_int(int a[], int n)
   {
 	int i;
@@ -1021,11 +1017,11 @@ void array_rotate_right_int(int a[], int n)
 	{
 		a[i] = a[i-1];
 		//shift right
-	}	
-	
+	}
+
 	a[0] = temp;
-		
-  }  
+
+  }
 
 void array_rotate_right_float(float a[], int n)
   {
@@ -1039,10 +1035,10 @@ void array_rotate_right_float(float a[], int n)
 	{
 		a[i] = a[i-1];
 		//shift right
-	}	
-	
+	}
+
 	a[0] = temp;
-		
+
   }
 
 void array_rotate_right_char(char a[], int n)
@@ -1057,8 +1053,8 @@ void array_rotate_right_char(char a[], int n)
 	{
 		a[i] = a[i-1];
 		//shift right
-	}	
-	
+	}
+
 	a[0] = temp;
-		
-  } 
+
+  }
