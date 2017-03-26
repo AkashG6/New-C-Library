@@ -452,17 +452,10 @@ void Finverse_mat(int m,int n,float (*inverse)[n],float (*mat)[n])
   }
 }
 //================================================
-
-
-
 //Finding minimum element in an array of integer values
-int array_min_int(int a[], int n)
-  {
-  	int c, min, index;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+int array_min_int(int a[], int n) {
+  int c, min, index;
+
   min = a[0];
   index = 0;
 
@@ -474,16 +467,13 @@ int array_min_int(int a[], int n)
   }
 
   return index;
-  }
+}
 
 //Finding minimum element in an array of float values
 float array_min_float(float a[], int n) {
   int c, index;
   float min;
-	if(n<0)
-		{
-			printf("Error: invalid array size, array size cannot be negative");
-		}
+
   min = a[0];
   index = 0;
 
@@ -500,10 +490,7 @@ float array_min_float(float a[], int n) {
 //Finding maximum element in an array of integer values
 int array_max_int(int a[], int n) {
   int c, max, index;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
   max = a[0];
   index = 0;
 
@@ -522,10 +509,7 @@ int array_max_int(int a[], int n) {
 float array_max_float(float a[], int n) {
   int c, index;
   float max;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
   max = a[0];
   index = 0;
 
@@ -543,10 +527,7 @@ float array_max_float(float a[], int n) {
  void array_asc_sort_int(int a[], int n)
    {
        int i, j, t;
-		if(n<0)
-		{
-			printf("Error: invalid array size, array size cannot be negative");
-		}
+
        for(i = 1; i <= n-1; i++)
           for(j = 1; j <= n-i; j++)
              if(a[j-1] >= a[j])
@@ -560,10 +541,7 @@ float array_max_float(float a[], int n) {
  void array_asc_sort_float(float a[], int n)
    {
        int i, j, t;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
        for(i = 1; i <= n-1; i++)
           for(j = 1; j <= n-i; j++)
              if(a[j-1] >= a[j])
@@ -579,10 +557,7 @@ float array_max_float(float a[], int n) {
  void array_desc_sort_int(int a[], int n)
    {
        int i, j, t;
-		if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
        for(i = 1; i <= n-1; i++)
           for(j = 1; j <= n-i; j++)
              if(a[j-1] <= a[j])
@@ -598,10 +573,7 @@ float array_max_float(float a[], int n) {
    {
        int i, j;
        float t;
-		if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
        for(i = 1; i <= n-1; i++)
           for(j = 1; j <= n-i; j++)
              if(a[j-1] <= a[j])
@@ -616,11 +588,6 @@ float array_max_float(float a[], int n) {
 int array_search_int(int a[], int n, int find) {
    int c;
 
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-
    for (c = 0 ;c < n ; c++ ) {
       if (a[c] == find)
          return c;
@@ -632,24 +599,6 @@ int array_search_int(int a[], int n, int find) {
 float array_search_float(float a[], int n, float find) {
    int c;
 
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-   for (c = 0 ;c < n ; c++ ) {
-      if (a[c] == find)
-         return c;
-   }
-    return -1;
-}
-
-char array_search_char(char a[], int n, char find) {
-   int c;
-
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
    for (c = 0 ;c < n ; c++ ) {
       if (a[c] == find)
          return c;
@@ -662,10 +611,7 @@ char array_search_char(char a[], int n, char find) {
 int array_sum_int(int a[], int n)
   {
     int i,sum = 0;
-    if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
@@ -680,10 +626,7 @@ float array_sum_float(float a[], int n)
   {
     int i;
     float sum = 0;
-    if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
@@ -697,10 +640,7 @@ float array_sum_float(float a[], int n)
 float array_avg_int(int a[], int n)
   {
     int i,sum = 0;
-    if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
@@ -715,349 +655,11 @@ float array_avg_float(float a[], int n)
   {
     int i;
     float sum = 0;
-    if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
+
     for(i=0;i<n;i++)
     {
       sum += a[i];
     }
 
     return sum/n;
-  }
-
-void array_reverse_int(int a[], int n)
-  {
-	int i, end;
-	float t;
-	//t is the temporary swapping variable
- 	end = n - 1;
- 	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-  	for (i = 0; i < n/2; i++)
-	{
-	//swapping elements
-    t = a[i];
-    a[i] = a[end];
-    a[end] = t;
-    end--;
-  	}
-  }
-
-void array_reverse_float(float a[], int n)
-  {
-	int i, end;
-	float t;
-	//t is the temporary swapping variable
- 	end = n - 1;
- 	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for (i = 0; i < n/2; i++)
-	{
-	//swapping elements
-    t = a[i];
-    a[i] = a[end];
-    a[end] = t;
-    end--;
-  	}
-  }
-
-void array_reverse_char(char a[], int n)
-  {
-	int i, end;
-	char t;
-	//t is the temporary swapping variable
- 	end = n - 1;
- 	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for (i = 0; i < n/2; i++)
-	{
-	//swapping elements
-    t = a[i];
-    a[i] = a[end];
-    a[end] = t;
-    end--;
-  	}
-  }
-
-
-  int * array_merge_int(int a[], int n1, int b[], int n2, int c[], int x)
-  {
-	int i=0, j=0, k=0;
-	if(x!=n1+n2)
-	{
-		printf("Error: size of destination array should be sum of the two source arrays\n");
-		exit(0);
-	}
-
-	while(i<n1)
-	{
-		c[k] = a[i];
-		k++;
-		i++;
-	}
-
-	while(j<n2)
-	{
-		c[k] = b[j];
-		k++;
-		j++;
-	}
-
-	return c;
-  }
-
-float * array_merge_float(float a[], int n1, float b[], int n2, float c[], int x)
-  {
-	int i=0, j=0, k=0;
-	if(x!=n1+n2)
-	{
-		printf("Error: size of destination array should be sum of the two source arrays\n");
-		exit(0);
-	}
-
-	while(i<n1)
-	{
-		c[k] = a[i];
-		k++;
-		i++;
-	}
-
-	while(j<n2)
-	{
-		c[k] = b[j];
-		k++;
-		j++;
-	}
-
-	return c;
-  }
-
-char * array_merge_char(char a[], int n1, char b[], int n2, char c[], int x)
-  {
-	int i=0, j=0, k=0;
-	if(x!=n1+n2)
-	{
-		printf("Error: size of destination array should be sum of the two source arrays\n");
-		exit(0);
-	}
-
-	while(i<n1)
-	{
-		c[k] = a[i];
-		k++;
-		i++;
-	}
-
-	while(j<n2)
-	{
-		c[k] = b[j];
-		k++;
-		j++;
-	}
-
-	return c;
-  }
-
-
-void array_shift_left_int(int a[], int n)
-  {
-	int i;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=0;i<n;i++)
-	{
-		a[i] = a[i+1];
-		//shift left
-	}
-	a[n-1] = 0;
-  }
-
-void array_shift_right_int(int a[], int n)
-  {
-	int i;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=n-1;i>0;i--)
-	{
-		a[i] = a[i-1];
-		//shift right
-	}
-	a[0] = 0;
-  }
-
-void array_shift_left_float(float a[], int n)
-  {
-	int i;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=0;i<n;i++)
-	{
-		a[i] = a[i+1];
-		//shift left
-	}
-	a[n-1] = 0;
-  }
-
-void array_shift_right_float(float a[], int n)
-  {
-	int i;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=n-1;i>0;i--)
-	{
-		a[i] = a[i-1];
-		//shift right
-	}
-	a[0] = 0;
-  }
-
-void array_shift_left_char(char a[], int n)
-  {
-	int i;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=0;i<n;i++)
-	{
-		a[i] = a[i+1];
-		//shift left
-	}
-	a[n-1] = 0;
-  }
-
-void array_shift_right_char(char a[], int n)
-  {
-	int i;
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=n-1;i>0;i--)
-	{
-		a[i] = a[i-1];
-		//shift right
-	}
-	a[0] = 0;
-  }
-
-void array_rotate_left_int(int a[], int n)
-  {
-	int i;
-	int temp = a[0];
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=0;i<n;i++)
-	{
-		a[i] = a[i-1];
-		//shift left
-	}
-	a[n-1] = temp;
-
-  }
-
-void array_rotate_left_float(float a[], int n)
-  {
-	int i;
-	float temp = a[0];
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=0;i<n;i++)
-	{
-		a[i] = a[i+1];
-		//shift left
-	}
-	a[n-1] = temp;
-
-  }
-
-void array_rotate_left_char(char a[], int n)
-  {
-	int i;
-	char temp = a[0];
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=0;i<n;i++)
-	{
-		a[i] = a[i+1];
-		//shift left
-	}
-	a[n-1] = temp;
-
-  }
-
-void array_rotate_right_int(int a[], int n)
-  {
-	int i;
-	int temp = a[n-1];
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=n-1;i>0;i--)
-	{
-		a[i] = a[i-1];
-		//shift right
-	}
-
-	a[0] = temp;
-
-  }
-
-void array_rotate_right_float(float a[], int n)
-  {
-	int i;
-	float temp = a[n-1];
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=n-1;i>0;i--)
-	{
-		a[i] = a[i-1];
-		//shift right
-	}
-
-	a[0] = temp;
-
-  }
-
-void array_rotate_right_char(char a[], int n)
-  {
-	int i;
-	char temp = a[n-1];
-	if(n<0)
-	{
-		printf("Error: invalid array size, array size cannot be negative");
-	}
-	for(i=n-1;i>0;i--)
-	{
-		a[i] = a[i-1];
-		//shift right
-	}
-
-	a[0] = temp;
-
   }

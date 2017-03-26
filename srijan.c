@@ -7,7 +7,7 @@ int main(void)
   scanf("%d%d",&m,&n );
   printf("\nEnter the row and column mat2:" );
   scanf("%d%d",&p,&q );
-  /*
+
   int a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q],tr[n][m],in[m][n];
   Iread_mat(m,n,a);
   printf("\nMatrix A:\n");
@@ -35,7 +35,7 @@ int main(void)
   printf("\nInverse of Matrix A:\n");
   Iprt_mat(m,n,in);
 
-  */
+  
   /*
   float a[m][n],b[p][q],add[m][n],sub[m][n],mul[m][q],tr[n][m],in[m][n];
   Fread_mat(m,n,a);
