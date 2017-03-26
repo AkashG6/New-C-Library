@@ -82,12 +82,32 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-        <a href="#hexa_to_bin">hexa_to_bin</a>
+        <a href="#dec_to_octa">dec_to_octa</a>
         </div>
         <div class="col-md-6">
-          <a href="#hexa_to_bin">hexa_to_bin</a>
+          <a href="#octa_to_dec">octa_to_dec</a>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-md-6">
+        <a href="#dec_to_hexa">dec_to_hexa</a>
+        </div>
+        <div class="col-md-6">
+          <a href="#hexa_to_dec">hexa_to_dec</a>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+        <a href="#hamming_7">hamming_7</a>
+        </div>
+<<<<<<< HEAD
+      </div>
+=======
+        <div class="col-md-6">
+          <a href="#hamming_12">hamming_12</a>
+        </div>
+      </div>   	
+>>>>>>> 1f18690c3665a49920df976cc3a32e9d0e03f0e7
   	 </div>
 
 
@@ -441,12 +461,20 @@
       </h4>
     </div>
     <div id="collapse12" class="panel-collapse collapse">
+<<<<<<< HEAD
       <div class="panel-body"><b>Parameters:</b>  (char destination_array,int destination_array_size, int source_array, int source_array_size)  <br>
                               <b>Return type:</b>char array<br>
                               <b>Function description:</b>   Converts binary number passed as source array to its equivalent hexadecimal no. and stores it in the destination array. <br>
                               <b>Example:</b> a[n] = *bin_to_hexa(a,n,array,n1);
+=======
+      <div class="panel-body"><b>Parameters:</b>  (int destination_array,int destination_array_size, int decimal_number) 
+  <br> 
+                              <b>Return type:</b>int array<br>
+                              <b>Function description:</b>  Converts decimal number to its equivalent hexadecimal number and stores it in the destination array.<br>
+                              <b>Example:</b> a[n] = *dec_to_octa(a, n, dec);
+>>>>>>> 1f18690c3665a49920df976cc3a32e9d0e03f0e7
                               </div>
-        <div class="panel-footer"><b>Restrictions:</b>  size of source array (n1) should be an integral multiple of 4 and size of destination array (n) should be at least (n1)/4.</div>
+        <div class="panel-footer"><b>Restrictions:</b>  cannot pass negative numbers to function.</div>
     </div>
   </div>
 </div>
@@ -461,12 +489,104 @@
       </h4>
     </div>
     <div id="collapse13" class="panel-collapse collapse">
+<<<<<<< HEAD
       <div class="panel-body"><b>Parameters:</b> (int destination_array ,int destination_array_size, int source_array, int source_array_size)  <br>
                               <b>Return type:</b> int array<br>
                               <b>Function description:</b>  Converts hexadecimal number passed as source array to its binary equivalent and stores it in the destination array.<br>
                               <b>Example:</b>  a[n] = *hexa_to_bin(a,n,array,n1);
                               </div>
         <div class="panel-footer"><b>Restrictions:</b>  size of destination array should be at least 4 times the size of source array.</div>
+=======
+      <div class="panel-body"><b>Parameters:</b> (int source_array, int source_array_size)  <br> 
+                              <b>Return type:</b> int<br>
+                              <b>Function description:</b>  Converts octal number passed as source array to its equivalent decimal number.<br>
+                              <b>Example:</b>  dec = octa_to_dec(array, n1);                            
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b> Can pass only unsigned numbers to function</div>
+
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info" id="dec_to_hexa">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse14" style="text-decoration:none"><b>dec_to_hexa</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;
+        Converts decimal number to hexadecimal</a>
+      </h4>
+    </div>
+    <div id="collapse14" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b>  (char destination_array,int destination_array_size, int decimal_number)<br> 
+                              <b>Return type:</b>char array<br>
+                              <b>Function description:</b>   Converts decimal number to its equivalent hexadecimal number.<br>
+                              <b>Example:</b> a[n] = *dec_to_hexa(a,n,no);
+                              </div>
+        <div class="panel-footer"><b>Restrictions:</b>  cannot pass negative numbers to function.</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="hexa_to_dec">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse15" style="text-decoration:none"><b>hexa_to_dec</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;
+        Converts hexadecimal number to decimal</a>
+      </h4>
+    </div>
+    <div id="collapse15" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b>  (char source_array,int source_array_size)   <br> 
+                              <b>Return type:</b> int<br>
+                              <b>Function description:</b>   Converts hexadecimal number passed as source array to its equivalent decimal number.<br>
+                              <b>Example:</b>   dec = hexa_to_dec(array,n1);                           
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b> Can pass only unsigned numbers to function</div>
+
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-info" id="hamming_7">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse16" style="text-decoration:none"><b>hamming_7</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+        Calculates the 7 bit hamming code </a>
+      </h4>
+    </div>
+    <div id="collapse16" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b>  (char destination_array,int destination_array_size, int decimal_number)<br> 
+                              <b>Return type:</b>int array<br>
+                              <b>Function description:</b>   Calculates the 7 bit hamming code of the 4 data bits passed as source array. The source array must be stored as: [D7, D6, D5, D3] and the hamming code will be returned as [D7, D6, D5, P4, D3, P2, P1]. The parity bit must either be 0 or 1(0: Even parity, 1: Odd parity).<br>
+                              <b>Example:</b>  a[n] = *hamming_7(a, n, array, n1, parity);
+                              </div>
+        <div class="panel-footer"><b>Restrictions:</b>   the data bit array must be of size 4 and the destination array must be of size 7. </div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-primary" id="hamming_12">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse17" style="text-decoration:none"><b>hamming_12</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&nbsp;
+        Calculates the 12 bit hamming code </a>
+      </h4>
+    </div>
+    <div id="collapse17" class="panel-collapse collapse">
+      <div class="panel-body"><b>Parameters:</b>  (int destination_array,int destination_array_size, int source_array, int source_array_size, int parity)   <br> 
+                              <b>Return type:</b> int array<br>
+                              <b>Function description:</b>   Calculates the 12 bit hamming code of the 8 data bits passed as source array. The source array must be passed as: [D12, D11, D10, D9, D7, D6, D5, D3] and the hamming code will be returned as [D12, D11, D10, D9, P8, D7, D6, D5, P4, D3, P2, P1]. The parity bit must either be 0 or 1(0: Even parity, 1: Odd parity).
+<br>
+                              <b>Example:</b>  a[n] = *hamming_12(a, n, array, n1, parity);                          
+                              </div> 
+        <div class="panel-footer"><b>Restrictions:</b>  the data bit array must be of size 8 and the destination array must be of size 12. </div>
+>>>>>>> 1f18690c3665a49920df976cc3a32e9d0e03f0e7
 
     </div>
   </div>
@@ -483,7 +603,7 @@
 
  <br>
 <h2 id="arrays.h">arrays.h</h2>
-<hr>
+<hr 
 <br>
 <div class="panel-group">
   <div class="panel panel-primary" id="int_read_mat">

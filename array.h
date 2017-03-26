@@ -785,7 +785,7 @@ void array_reverse_char(char a[], int n)
   }
 
 
-  int * array_merge_int(int a[], int n1, int b[], int n2, int c[], int x)
+  int * array_merge_int(int c[], int x, int a[], int n1, int b[], int n2)
   {
 	int i=0, j=0, k=0;
 	if(x!=n1+n2)
@@ -811,7 +811,7 @@ void array_reverse_char(char a[], int n)
 	return c;
   }
 
-float * array_merge_float(float a[], int n1, float b[], int n2, float c[], int x)
+float * array_merge_float( float c[], int x, float a[], int n1, float b[], int n2)
   {
 	int i=0, j=0, k=0;
 	if(x!=n1+n2)
@@ -837,7 +837,7 @@ float * array_merge_float(float a[], int n1, float b[], int n2, float c[], int x
 	return c;
   }
 
-char * array_merge_char(char a[], int n1, char b[], int n2, char c[], int x)
+char * array_merge_char( char c[], int x, char a[], int n1, char b[], int n2)
   {
 	int i=0, j=0, k=0;
 	if(x!=n1+n2)
@@ -936,7 +936,7 @@ void array_shift_left_char(char a[], int n)
 		a[i] = a[i+1];
 		//shift left
 	}
-	a[n-1] = 0;
+	a[n-1] = '\0';
   }
 
 void array_shift_right_char(char a[], int n)
@@ -951,7 +951,7 @@ void array_shift_right_char(char a[], int n)
 		a[i] = a[i-1];
 		//shift right
 	}
-	a[0] = 0;
+	a[0] = '\0';
   }
 
 void array_rotate_left_int(int a[], int n)

@@ -909,28 +909,28 @@
 
 //******************************************************ARRAY_ROTATE_RIGHT_CHAR******************************************************
 
-//#include<stdio.h>
-//#include"array.h"
-//
-//int main()
-//{
-//	int m, n, i, ans;
-//
-//	printf("Enter the size of the array A: ");
-//	scanf("%d",&n);
-//
-//	char a[n];
-//
-//	printf("Enter the elements: \n");
-//
-//	for(i= 0; i< n; i++)
-//	scanf(" %c",&a[i]);
-//
-//	array_rotate_right_char(a,n);
-//
-//	for(i= 0; i<n; i++)
-//	printf("%c\t",a[i]);
-//
-//	return 0;
-//
-//}
+#include<stdio.h>
+#include"array.h"
+
+int main()
+{
+	int m, n, i, ans;
+
+	printf("Enter the size of the array A: ");
+	scanf("%d",&n);
+
+	char a[n];
+
+	printf("Enter the elements: \n");
+
+	for(i= 0; i< n; i++)
+	scanf(" %c",&a[i]);
+
+	array_rotate_right_char(a,n);
+
+	for(i= 0; i<n; i++)
+	printf("%c\t",a[i]);
+
+	return 0;
+
+}
