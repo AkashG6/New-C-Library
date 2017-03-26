@@ -9,6 +9,7 @@ struct vector
 	struct vector* next;
 };
 
+
 int is_empty(struct vector* start)
 {
 	if(start->next==NULL)
@@ -17,6 +18,7 @@ int is_empty(struct vector* start)
 	else
 	return(0);
 }
+
 
 struct vector* create_vector()
 {
@@ -28,6 +30,7 @@ struct vector* create_vector()
 	
 	return(node);
 }
+
 
 void insert_last(struct vector* start, float data)
 {
@@ -50,6 +53,7 @@ void insert_last(struct vector* start, float data)
 	 node->next=NULL;
 }
 
+
 void insert_first(struct vector* start, float data)
 {
      struct vector *node = create_vector();
@@ -60,6 +64,7 @@ void insert_first(struct vector* start, float data)
 	 node->cdata=data;
 	 node->fdata=data;
 }
+
 
 void insert_at(struct vector* start, int index, float data)
 {
@@ -95,6 +100,7 @@ void insert_at(struct vector* start, int index, float data)
 	}
 }
 
+
 void delete_first(struct vector* start)
 {
 	if(!is_empty(start))
@@ -112,6 +118,7 @@ void delete_first(struct vector* start)
 		exit(0);
 	}	
 }
+
 
 void delete_last(struct vector* start)
 {
@@ -170,6 +177,7 @@ void delete_at(struct vector* start, int index)
 	}
 }
 
+
 void display_int(struct vector* start)
 {
 	if(!is_empty(start))
@@ -192,6 +200,7 @@ void display_int(struct vector* start)
 	}
 	
 }
+
 
 void display_char(struct vector* start)
 {
@@ -216,6 +225,7 @@ void display_char(struct vector* start)
 	
 }
 
+
 void display_float(struct vector* start)
 {
 	if(!is_empty(start))
@@ -239,6 +249,7 @@ void display_float(struct vector* start)
 	
 }
 
+
 float get_first(struct vector* start)
 {
 	if(!is_empty(start))
@@ -250,6 +261,7 @@ float get_first(struct vector* start)
 		exit(0);
 	}
 }
+
 
 float get_last(struct vector* start)
 {
@@ -274,6 +286,7 @@ float get_last(struct vector* start)
 		exit(0);
 	}
 }
+
 
 float get_at(struct vector* start, int index)
 {
@@ -305,6 +318,7 @@ float get_at(struct vector* start, int index)
 	}
 }
 
+
 int vector_length(struct vector* start)
 {
 	struct vector* temp = start->next;
@@ -318,6 +332,7 @@ int vector_length(struct vector* start)
 	
 	return(count);
 }
+
 
 int contains(struct vector* start, float data)
 {
@@ -342,6 +357,33 @@ int contains(struct vector* start, float data)
 	return(0);
 }
 
+
+int index_of(struct vector* start, float data)
+{
+	struct vector* temp = start->next;
+	int flag = 0;
+	int c=0;
+	
+	while(temp!=NULL)
+	{
+		if(temp->cdata == data || temp->fdata == data || temp->idata == data)
+		{
+			flag=1;
+			break;
+		}
+		
+		c++;
+		temp = temp->next;
+	}
+	
+	if(flag==1)
+	return(c);
+	
+	else
+	return(-1);
+}
+
+
 void clear_vector(struct vector* start)
 {
 	struct vector* temp;
@@ -357,6 +399,7 @@ void clear_vector(struct vector* start)
 		temp=track;
 	}
 }
+
 
 struct vector* clone_vector(struct vector* start)
 {

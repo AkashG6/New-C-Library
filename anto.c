@@ -30,6 +30,10 @@ int main()
     
     printf("\nContains:%d",contains(vname, 88));
     
+    printf("\nIndex of:%d",index_of(vname, 77));
+    
+    printf("\nIndex of:%d",index_of(vname, 32));
+    
     struct vector* new_vname = clone_vector(vname);
     
     
