@@ -32,7 +32,7 @@ int main()
     
     printf("\nIndex of:%d",index_of(vname, 77));
     
-    printf("\nIndex of:%d",index_of(vname, 32));
+    printf("\nIndex of:%d",index_of(vname, 98));
     
     struct vector* new_vname = clone_vector(vname);
     
@@ -60,7 +60,18 @@ int main()
     printf("\n");
     
 	display_float(new_vname);
+	
+	insert_last(new_vname, 88);
+	insert_last(new_vname, 88);
+	insert_last(new_vname, 98);
+	insert_last(new_vname, 90);
+	
+	printf("\n");
     
+	display_int(new_vname);
+    printf("\n");
+	
+	printf("\nLast Index of:%d",last_index_of(new_vname, 88));
 	
 	printf("\nLenght new vname:%d",vector_length(new_vname));
 	

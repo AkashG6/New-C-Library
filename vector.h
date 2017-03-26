@@ -384,6 +384,33 @@ int index_of(struct vector* start, float data)
 }
 
 
+int last_index_of(struct vector* start, float data)
+{
+	struct vector* temp = start->next;
+	int flag = 0;
+	int c=0;
+	int pos = c;
+	
+	while(temp!=NULL)
+	{
+		if(temp->cdata == data || temp->fdata == data || temp->idata == data)
+		{
+			flag=1;
+			pos = c;
+		}
+		
+		c++;
+		temp = temp->next;
+	}
+	
+	if(flag==1)
+	return(pos);
+	
+	else
+	return(-1);
+}
+
+
 void clear_vector(struct vector* start)
 {
 	struct vector* temp;
