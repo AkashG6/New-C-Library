@@ -265,7 +265,7 @@ float Fdeterminant_mat(int k,int l,float (*a)[l])
       exit(0);
     }
 }
-float Ideterminant_mat(int k,int l,int (*a)[l])
+int Ideterminant_mat(int k,int l,int (*a)[l])
 {
   if(k==l)
   {
