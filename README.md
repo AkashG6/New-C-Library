@@ -22,7 +22,7 @@ For example:-<br> #include<stdio.h><br>
               #include "bin.h"<br>
               #include "vector.h"<br>
               #include "array.h"<br><br>
-**NOTE:- The above method only works if the header file is present int the root directory of your program (i.e in the same path as your C progarm)** 
+**NOTE:- The above method only works if the header file is present in the root directory of your program (i.e in the same path as your C progarm)** 
 
 If the header file is located in any subfolder of your root directory then import as follows:-<br><br>
 #include "path/bin.h"<br>
