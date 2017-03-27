@@ -8,7 +8,7 @@ As a modest beginning, we have built three libraries with 90 extremely user frie
 
 **We hope the open source community to contribute more and more C libraries with useful, user friendly and robust functions to compete with the in-built libraries of Java and Python.**
 
-The project also consists of a webpage hosted on GitHub detailing the various functions available in these new libraries.
+The project also consists of a webpage (https://akashg6.github.io/New-C-Library/index.html) hosted on GitHub detailing the various functions available in these new libraries.
 You can also refer test.c file for seeing the actual implementation of every function available.
 
 
