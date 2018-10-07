@@ -1,12 +1,12 @@
 **INTRODUCTION:-**
 
-C is the father of all programming languages. Though it's popularity has reduced with introduction of more user friendly languages like Python and JavaScript, C is still widely used in the fields of compiler and OS construction.
+C is the alpha of all programming languages. Though it's popularity has declined with the introduction of more user friendly languages like Python and JavaScript, C is still widely used in the fields of compiler and OS creation.
 
 The prime aim of this project is to make coding in C a pleasure with introduction of more libraries which are not currently present in C unlike Python or Java.
 
-As a modest beginning, we have built three libraries with 90 extremely user friendly functions covering most aspects of arrays, matrices, vectors and binary operations.
+As a modest beginning, we have built 3 libraries with 90 extremely user friendly functions covering most aspects of arrays, matrices, vectors and binary operations.
 
-**We hope the open source community will contribute more and more C libraries with useful, user friendly and robust functions to compete with the in-built libraries of Java and Python.**
+**We hope the open source community will contribute many more C libraries with useful, user friendly and robust functions to compensate for the unexisting in-built ones,unlike that of Java and Python.**
 
 The project also consists of a webpage (https://akashg6.github.io/New-C-Library/index.html) hosted on GitHub detailing the various functions available in these new libraries.
 You can also refer test.c file for seeing the actual implementation of every function available.
